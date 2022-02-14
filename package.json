@@ -1,0 +1,23 @@
+{
+  "name": "spa-fetch",
+  "version": "0.0.1",
+  "description": "Global fetch for Single Page Applications",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tony Mobily",
+  "license": "ISC",
+  "devDdependencies": {
+    "express": "^4.17.1",
+    "jsonreststores": "^2.0.12",
+    "simpleschema": "^2.0.6"
+  },
+  "devDependencies": {
+    "cypress": "^9.4.1",
+    "express": "^4.17.2",
+    "jsonreststores": "^2.0.14",
+    "simpleschema": "^2.0.6",
+    "start-server-and-test": "^1.14.0"
+  }
+}
