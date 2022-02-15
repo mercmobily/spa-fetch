@@ -1,13 +1,15 @@
 /* TODO
-  Make config object, exported, to set timeouts, prefixes, error handling,
   Write more tests running the server
   Make code literate
   Make decent web site
 */
 
-export const config = {
-  cacheDuration: 12000
+export const spaFetchConfig = {
+  cacheDuration: 12000,
+  fetcher: null
 }
+
+const config = spaFetchConfig
 
 function canonicalize (obj) {
   if (!obj) return
@@ -35,11 +37,8 @@ function makeHash (url, init) {
       for (const prop of allowedInitProperties) originalRequestInit[prop] = originalRequest[prop]
       finalRequest = new Request(originalRequest.url, { ...originalRequestInit, ...init })
       for (const prop of allowedInitProperties) finalInit[prop] = finalRequest[prop]
-      if (init.body) finalInit.body = init.body
     } else {
       for (const prop of allowedInitProperties) finalInit[prop] = originalRequest[prop]
-      // NOTE: this will not catch request.body since at this stage it's already a stream/not
-      // available because of https://bugs.chromium.org/p/chromium/issues/detail?id=969843
       finalRequest = url
       // finalInit will stay as {}
     }
@@ -52,57 +51,67 @@ function makeHash (url, init) {
   } else {
     finalRequest = new Request(url, init)
     for (const prop of allowedInitProperties) finalInit[prop] = finalRequest[prop]
-    finalInit.body = init.body
     finalUrl = finalRequest.url
   }
 
-  // Add headers, canonalised
-  finalInit.headers = canonicalize(finalInit.headers)
-  finalInit.body = canonicalize(finalInit.body)
+  // This will totally prevent caching
+  // No point in doing anything else once the method is 100% worked out
+  if (finalInit.method !== 'GET') return ''
 
+  // Delete empty ones, if any
   for (const k in finalInit) {
     if (typeof finalInit[k] === 'undefined') delete finalInit[k]
   }
-  // put properties in sorted order to make the hash canonical
+
+  // Put properties in sorted order to make the hash canonical
   // the canonical sort is top level only,
-  //    does not sort properties in nested objects
+  finalInit.headers = canonicalize(finalInit.headers)
   const items = canonicalize(finalInit)
 
   // add URL on the front
   items.unshift(finalUrl + ' ')
 
-  console.log('RETURNING', JSON.stringify(items))
   return JSON.stringify(items)
 }
 
-export const globalFetch = async (resource, init = {}) => {
+export const spaFetch = async (resource, init = {}) => {
   const key = makeHash(resource, init)
   const now = Date.now()
 
   // Clean up expired cached values
-  for (const [key, value] of globalFetch.cache) {
+  for (const [key, value] of spaFetch.cache) {
     if (value.expires < now) {
-      globalFetch.cache.delete(key)
+      spaFetch.cache.delete(key)
     }
   }
 
-  const cachedItem = globalFetch.cache.get(key)
+  if (key) {
+    const cachedItem = spaFetch.cache.get(key)
 
-  if (cachedItem && cachedItem.expires >= now) {
-    const responsePromise = new Promise((resolve, reject) => {
-      cachedItem.fetchPromise.then(
-        response => { resolve(response.clone()) },
-        error => { reject(error) }
-      )
-    })
-    return responsePromise
+    if (cachedItem && cachedItem.expires >= now) {
+      const responsePromise = new Promise((resolve, reject) => {
+        cachedItem.fetchPromise.then(
+          response => { resolve(response.clone()) },
+          error => { reject(error) }
+        )
+      })
+      return responsePromise
+    }
   }
 
-  const fetchPromise = fetch(resource, init)
-  globalFetch.cache.set(key, { fetchPromise, expires: now + config.cacheDuration })
+  let fetchPromise
+  if (config.fetcher) {
+    fetchPromise = config.fetcher(resource, init)
+  } else {
+    fetchPromise = fetch(resource, init)
+  }
+
+  if (key) {
+    spaFetch.cache.set(key, { fetchPromise, expires: now + config.cacheDuration })
+  }
 
   return fetchPromise
 }
 
 // initalize cache
-globalFetch.cache = new Map()
+spaFetch.cache = new Map()
