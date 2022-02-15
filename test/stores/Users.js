@@ -12,6 +12,7 @@ class Store extends MemoryMixin(HTTPMixin(JsonRestStores)) {
       })
   }
 
+  static get artificialDelay () { return 1000 }
   static get version () { return '1.0.0' }
 
   static get storeName () { return 'users' }
