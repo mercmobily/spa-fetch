@@ -31,8 +31,7 @@ const prefix = 'http://localhost:8080/stores/1.0.0'
 
 describe('The Home Page', () => {
   it('successfully loads', async () => {
-
-    // const test = fetch(new Request({}))
+    //
     const allRes = await Promise.all([
       spaFetch(`${prefix}/users`),
       spaFetch(`${prefix}/users`),
