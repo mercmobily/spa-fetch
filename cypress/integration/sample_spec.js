@@ -2,17 +2,22 @@ import { globalFetch } from '../../index.js'
 
 const prefix = 'http://localhost:8080/stores/1.0.0'
 
-describe('The Home Page', () => {
-    it('successfully loads', async () => {
+describe ('The Home Page', () => {
+  it('successfully loads', async () => {
+    debugger
 
-        debugger
-      const res1 = await globalFetch(`${prefix}/users`)
-      const res2 = await globalFetch(`${prefix}/users`)
-      const res3 = await globalFetch(`${prefix}/users`)
-      const json1 = await res1.json()
-      const json2 = await res2.json()
-      const json3 = await res3.json()
-      console.log(res1, res2, res3, json1, json2, json3)
-    })
+    // const test = fetch(new Request({}))
+    const allRes = await Promise.all([
+      globalFetch(`${prefix}/users`),
+      globalFetch(`${prefix}/users`),
+      globalFetch(`${prefix}/users`)
+    ])
 
+    const r1 = await allRes[0].json()
+    const r2 = await allRes[1].json()
+    const r3 = await allRes[2].json()
+
+    console.log(r1, r2, r3)
+    expect(r1).to.be.an('array')
   })
+})
