@@ -212,14 +212,14 @@ describe('Using request object rather than url/init pairs', () => {
   it('runs two requests, but cache expires', async () => {
     fetcher.counter = 0
     spaFetch.cache = new Map()
-    spaFetchConfig.cacheDuration = 500
+    spaFetchConfig.cacheDuration = 50
 
     const p0 = await spaFetch(`${prefix}/users`)
-    await sleep(600)
+    await sleep(60)
     const p1 = await spaFetch(`${prefix}/users`)
-    await sleep(600)
+    await sleep(60)
     const p2 = await spaFetch(`${prefix}/users`)
-    await sleep(600)
+    await sleep(60)
 
     const r0 = await p0.json()
     const r1 = await p1.json()
@@ -230,5 +230,62 @@ describe('Using request object rather than url/init pairs', () => {
     expect(r0).to.have.lengthOf(4)
     expect(r1).to.have.lengthOf(4)
     expect(r2).to.have.lengthOf(4)
+  })
+})
+
+describe('Error management', () => {
+  it('Runs one simple request with network error', async () => {
+    fetcher.counter = 0
+    spaFetch.cache = new Map()
+    //
+    try {
+      const allRes = await Promise.all([
+        spaFetch(`http://localhost:8081/stores/1.0.0/users`)
+      ])
+    } catch (e) {
+      expect(e).to.be.an('error')
+    }
+    expect(fetcher.counter).to.equal(1)
+  })
+
+  it('Runs two identical request with network error', async () => {
+    fetcher.counter = 0
+    spaFetch.cache = new Map()
+    //
+    try {
+      await Promise.all([
+        spaFetch(`http://localhost:9999/stores/1.0.0/users`)
+      ])
+    } catch (e) {
+      expect(e).to.be.an('error')
+    }
+
+    try {
+      await Promise.all([
+        spaFetch(`http://localhost:9999/stores/1.0.0/users`)
+      ])
+    } catch (e) {
+      expect(e).to.be.an('error')
+    }
+    expect(fetcher.counter).to.equal(1)
+  })
+
+  it('Runs three requests, three identical, all cached, returning 404', async () => {
+    fetcher.counter = 0
+    spaFetch.cache = new Map()
+    //
+    const allRes = await Promise.all([
+      spaFetch(`${prefix}/users/99`),
+      spaFetch(`${prefix}/users/99`),
+      spaFetch(`${prefix}/users/99`)
+    ])
+    const r0 = await allRes[0].status
+    const r1 = await allRes[1].status
+    const r2 = await allRes[2].status
+    expect(fetcher.counter).to.equal(1)
+
+    expect(r0).to.equal(404)
+    expect(r1).to.equal(404)
+    expect(r2).to.equal(404)
   })
 })
