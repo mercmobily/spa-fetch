@@ -48,18 +48,6 @@
             
             
               <li>
-                  <a class="source " href="codelabs.html">
-                      codelabs
-                  </a>
-              </li>
-            
-          
-            
-            
-          
-            
-            
-              <li>
                   <a class="source " href="literate-code.html">
                       literate code
                   </a>
@@ -104,22 +92,6 @@
             
             
               <li>
-                <a class="source " href="codelabs.html">
-                    codelabs
-                </a>
-              </li>
-          
-            
-            
-              <li>
-                <a class="source  indented " href="codelabs/how-to/index.html">
-                    codelabs &#8627; how to
-                </a>
-              </li>
-          
-            
-            
-              <li>
                 <a class="source " href="literate-code.html">
                     literate code
                 </a>
@@ -132,154 +104,34 @@
     <section class="content-page">
 
       
-<style>
-
-  NOPE ee-header {
-    -webkit-animation: fadeIn 0.6s ease-in; /* Safari 4+ */
-    -moz-animation:    fadeIn 0.6s ease-in; /* Fx 5+ */
-    -o-animation:      fadeIn 0.6s ease-in; /* Opera 12+ */
-    animation:         fadeIn 0.6s ease-in; /* IE 10+, Fx 29+ */
-  }
-
-  NOPE #logo {
-    box-sizing: border-box;
-    height: 100px;
-    background-image: url("images/TPE_logo_white.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-  }
-
-  /*
-  .header div.topbar #logo ,
-  ee-header #logo {
-    display: none;
-  }
-  */
-
-  .home-hero {
-    box-sizing: border-box;
-    padding-top: 2em;
-    padding-bottom: 1em;
-    color: whitesmoke;
-    background-color: #343434;
-    background-image: url("data:image/svg+xml,%3Csvg width='84' height='48' viewBox='0 0 84 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h12v6H0V0zm28 8h12v6H28V8zm14-8h12v6H42V0zm14 0h12v6H56V0zm0 8h12v6H56V8zM42 8h12v6H42V8zm0 16h12v6H42v-6zm14-8h12v6H56v-6zm14 0h12v6H70v-6zm0-16h12v6H70V0zM28 32h12v6H28v-6zM14 16h12v6H14v-6zM0 24h12v6H0v-6zm0 8h12v6H0v-6zm14 0h12v6H14v-6zm14 8h12v6H28v-6zm-14 0h12v6H14v-6zm28 0h12v6H42v-6zm14-8h12v6H56v-6zm0-8h12v6H56v-6zm14 8h12v6H70v-6zm0 8h12v6H70v-6zM14 24h12v6H14v-6zm14-8h12v6H28v-6zM14 8h12v6H14V8zM0 8h12v6H0V8z' fill='%239C92AC' fill-opacity='0.09' fill-rule='evenodd'/%3E%3C/svg%3E");
-  }
-
-  iframe.demo {
-    width: 100vw;
-    margin: auto;
-  }
-
-  @media (min-width: 800px) {
-    #logo {
-      height: 160px;
-    }
-
-    iframe.demo {
-      width: 80vw;
-    }
-  }
-
-  blockquote code {
-    background-color: #dcdcdc;
-  }
-
-</style>
-
 <div class="home-hero">
   <div id="logo" alt="TPE"></div>
-  <h4>Powerful, themeable, enhanced native elements<h4>
+  <h4>Global fetch() for Single Page Applications<h4>
 </div>
 
 <blockquote>
-  The Platform Elements (TPE) is not yet another custom implementation. It <em>is</em> native elements, enhanced. TPE form controls are 100% customizable, and still behave like you would expect from native elements, while also providing additional capabilities. 
+  Decoupled elements in an SPA will never make the same call twice again  
 </blockquote>
-
-<div class="home-section home-compare">
-  <div>
-    <h4>From this...</h4>
-    <pre><code><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;native-input&quot;</span>&gt;</span></span><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span></span>Native Input (lowercase only)<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span></span>
-<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;native-input&quot;</span> <span class="hljs-attr">pattern</span>=<span class="hljs-string">&quot;[a-z]*&quot;</span> /&gt;</span></span>
-<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;native-checkbox&quot;</span> /&gt;</span></span>
-<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;native-checkbox&quot;</span>&gt;</span></span><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span></span>Native Checkbox<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span></span>
-</code></pre>
-    <label for="native-input">
-      <span>Native Input (lowercase only)</span>
-    </label>
-    <input id="native-input" pattern="[a-z]*" />
-
-    <input type="checkbox" id="native-checkbox" />
-    <label for="native-checkbox">
-      <span>Native Checkbox</span>
-    </label>
-  </div>
-  <div>
-    <h4>...to this!</h4>
-    <pre><code><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">nn-input-text</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;TPE Input (lowercase only)&quot;</span> <span class="hljs-attr">pattern</span>=<span class="hljs-string">&quot;[a-z]*&quot;</span>&gt;</span></span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">nn-input-text</span>&gt;</span></span>
-<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">nn-input-checkbox</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;TPE Checkbox&quot;</span>&gt;</span></span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">nn-input-checkbox</span>&gt;</span></span>
-</code></pre>
-    <nn-input-text label="TPE Input (lowercase only)" pattern="[a-z]+"></nn-input-text>
-    <nn-input-checkbox label="TPE Checkbox"></nn-input-checkbox>
-  </div>
-</div>
-
-<blockquote>
-  In this example, the <code>pattern</code> attribute isn’t handled by TPE. Every attribute and <em>every</em> property is mirrored into the contained native element. TPE elements don’t need a manual, since they <em>are</em> native ones.
-</blockquote>
-
-<div class="home-section">
-  <h2>The element collection </h2>
-  <p>Native elements are wrapped inside <a
-  href="https://developer.mozilla.org/en-US/docs/Web/Web_Components">Custom
-  Elements</a> that reflect presence and values for all native properties and
-  attributes. The only differences, for the form control elements, are the
-  embedded labels and the fact that input types all have their own element, like
-  <code>nn-input-email</code> and <code>nn-input-progress</code>.</p>
-  <p>These elements are what we call <strong>Nearly Native</strong> (hence the <em>nn-</em>
-  prefix). We have also come up with two additional categories of elements that
-  can help developers and design build great apps. They are <strong>Enhaced
-  Native</strong> (en-) and <strong>Extra Elements</strong> (ee-).</p>
-  <p>You can <a href="/documentation.html">learn more</a> in the documentation section, but here is a brief summary of how they compare:</p>
-</div>
-<div class="home-section home-compare">
-  <div>
-    <h3>NN ELEMENTS</h3>
-    <blockquote> Look and behave like native elements by default.</blockquote>
-  </div>
-  <div>
-    <h3>EN ELEMENTS</h3>
-    <blockquote> Useful features and capabilities added to native elements.</blockquote>
-  </div>
-  <div>
-    <h3>EE ELEMENTS</h3>
-    <blockquote> Common UI patterns that have no native counterparts.</blockquote>
-  </div>
-</div>
-
-<div class="home-section">
-  <h2>Fully customizable</h2>
-  <p>All elements in the collection can be used directly or extended by
-  Developers to include more functionality needed in your project. TPE has a
-  robust theming solution that makes it possible to implement an entire design
-  system as an easy to build add-on package. It also allows for the use of
-  simple, plain CSS, while still taking advantage of shadow DOM
-  encapsulation. 
-  </p>
-</div>
-
-<div class="home-section home-showcase">
-  <h2>Try it out live</h2>
-  <div style="display: flex;">
-    <iframe class="demo" src="https://stackblitz.com/edit/live-tpe?embed=1&file=index.html" height="400px"></iframe>
-  </div>
-</div>
-
       
         <article class="index.md">
       
                   
+          <p>spa-fetch is a wrapper to Javascript’s native <code>fetch()</code> call which will prevent multiple <code>fetch()</code> <strong>GET</strong> calls being made
+against the same URL in a short amount of time.
+It also provides hooks which will allow specific code to be run before and after each fetch call.</p>
+<h2 id="use-cases">Use cases</h2>
+
           
+                  
+          <p>You may have a SPA (Single Page Application) made up of fully decoupled components that use the browser
+location to load data. If two decoupled components are nested location-wise (e.g. one is <code>/users/:userId</code> and the other one
+is <code>/users/:userId/address/:addressId</code>), they may both attempt to make a request for <code>/users/10</code> (assuming that <code>userId</code> is 10)
+within a short amount of time.</p>
+<p>You may have an application that in which the user can trigger an HTTP GET call via UI, and want to make sure that each call
+behaves as if the server had responded, without overwhelming the server with requests.</p>
+<p>You may have an SPA and want to centralise the UI response for specific fetch errors. For example a 401 could trigger a
+dialog to re-login.</p>
+
           
         
       
@@ -310,18 +162,6 @@
                     documentation
                 </a>
             </li>
-          
-        
-          
-          
-            <li>
-                <a class="source " href="codelabs.html">
-                    codelabs
-                </a>
-            </li>
-          
-        
-          
           
         
           

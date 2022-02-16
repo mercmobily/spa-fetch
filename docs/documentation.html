@@ -3,7 +3,7 @@
 
 <html lang="en">
 <head>
-  <title>Welcome to The Platform</title>
+  <title>spa-fetch documentation</title>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <link rel="stylesheet" media="all" href="template.css" />
@@ -21,7 +21,7 @@
   <ee-header id="header" class="header" >
     <div slot="header-title" style="display: flex;">
       <div id="logo" alt="TPE"></div>
-      <h3 class="page-title" >Welcome to The Platform</h3>
+      <h3 class="page-title" >spa-fetch documentation</h3>
     </div>
     
       <nav class="header-menu" slot="actions" role="navigation">
@@ -43,18 +43,6 @@
                       documentation
                   </a>
               </li>
-            
-          
-            
-            
-              <li>
-                  <a class="source " href="codelabs.html">
-                      codelabs
-                  </a>
-              </li>
-            
-          
-            
             
           
             
@@ -104,22 +92,6 @@
             
             
               <li>
-                <a class="source " href="codelabs.html">
-                    codelabs
-                </a>
-              </li>
-          
-            
-            
-              <li>
-                <a class="source  indented " href="codelabs/how-to/index.html">
-                    codelabs &#8627; how to
-                </a>
-              </li>
-          
-            
-            
-              <li>
                 <a class="source " href="literate-code.html">
                     literate code
                 </a>
@@ -136,33 +108,97 @@
         <article class="documentation.md">
       
                   
-          <p>The Platform Elements is a minimalist set of themable elements for web designers and web developers.
-There are three types of elements:</p>
+          <p>Visit the <a href="https://mobily-enterprises.github.io/spa-fetch">full web site</a> with the full source code as literate code.</p>
+<h2 id="use-as-drop-in-replacement-of-the-native-fetch">Use as drop-in replacement of the native <code>fetch()</code></h2>
+
+          
+                  
+          <p>The easiest and most basic use of spa-fetch is to simply import it </p>
+<pre><code><pre class="shiki" style="background-color: transparent"><code ><span class="line"><span style="color: #24292EFF">import { spaFetch } from &#39;@spa-fetch&#39;</span></span>
+<span class="line empty-line"></span>
+<span class="line"><span style="color: #24292EFF">...</span></span>
+<span class="line"><span style="color: #24292EFF">...</span></span>
+<span class="line"><span style="color: #24292EFF">await function () {</span></span>
+<span class="line"><span style="color: #24292EFF">  response = await spaFetch(&#39;/users/10&#39;)</span></span>
+<span class="line"><span style="color: #24292EFF">  data = await response.json()</span></span>
+<span class="line empty-line"></span>
+<span class="line"><span style="color: #24292EFF">  console.log(data)</span></span>
+<span class="line"><span style="color: #24292EFF">}</span></span></code></pre>
+</code></pre>
+<p>Note that if you make the same call twice within 1 second, the server will only he hit <em>once</em>. However, the data will be available for each call:</p>
+<pre><code><pre class="shiki" style="background-color: transparent"><code ><span class="line"><span style="color: #24292EFF">import { spaFetch } from &#39;@spa-fetch&#39;</span></span>
+<span class="line empty-line"></span>
+<span class="line"><span style="color: #24292EFF">...</span></span>
+<span class="line"><span style="color: #24292EFF">...</span></span>
+<span class="line"><span style="color: #24292EFF">await function () {</span></span>
+<span class="line"><span style="color: #24292EFF">  response1 = await spaFetch(&#39;/users/10&#39;)</span></span>
+<span class="line"><span style="color: #24292EFF">  response2 = await spaFetch(&#39;/users/10&#39;)</span></span>
+<span class="line"><span style="color: #24292EFF">  </span></span>
+<span class="line"><span style="color: #24292EFF">  data1 = await response1.json()</span></span>
+<span class="line"><span style="color: #24292EFF">  data2 = await response2.json()</span></span>
+<span class="line empty-line"></span>
+<span class="line"><span style="color: #24292EFF">  console.log(data1)</span></span>
+<span class="line"><span style="color: #24292EFF">  console.log(data2)</span></span>
+<span class="line"><span style="color: #24292EFF">}</span></span></code></pre>
+</code></pre>
+<h2 id="configuring-the-module">Configuring the module</h2>
+
+          
+                  
+          <p>spa-fetch esports a variable called <code>spaFetchConfig</code> that you can use to configure it.</p>
+<p>The configuration properties are:</p>
 <ul>
-<li><code>nn-</code> elements work <em>exactly</em> like native elements (input, select, etc.)</li>
-<li><code>en-</code> elements work like <code>nn</code> elements, but with enhancements (forms, advanced range, etc.)</li>
-<li><code>ee-</code> elements are elements that do not resemble native ones (autocomplete, header, navbar, fab)</li>
+<li><code>cacheDuration</code> – defaults to 1000ms (1 second). Determines how long items are cached for</li>
+<li><code>fetcher</code> – defaults as null. If set, the passed function will be used to fetch, rather than <code>window.fetch()</code></li>
 </ul>
-<h2 id="web-designers">Web designers</h2>
+<h3 id="setting-a-specific-duration-for-the-cache">Setting a specific duration for the cache</h3>
 
           
                   
-          <ul>
-<li>Use the <code>nn-</code> elements by simply replacing the corresponding native ones.</li>
-<li>Use enhanced elements to load data from a remote server, code autocomplete, and more</li>
-<li>Theme elements using custom CSS properties or custom stylesheets</li>
-</ul>
-<h2 id="web-developers">Web developers</h2>
+          <pre><code><pre class="shiki" style="background-color: transparent"><code ><span class="line"><span style="color: #24292EFF">import { spaFetch, spaFetchConfig } from &#39;@spa-fetch&#39;</span></span>
+<span class="line empty-line"></span>
+<span class="line"><span style="color: #24292EFF">spaFetchConfig.cacheDuration = 200</span></span>
+<span class="line empty-line"></span>
+<span class="line"><span style="color: #24292EFF">const sleep = (ms) =&gt; new Promise(resolve =&gt; setTimeout(resolve, ms))</span></span>
+<span class="line empty-line"></span>
+<span class="line"><span style="color: #24292EFF">...</span></span>
+<span class="line"><span style="color: #24292EFF">...</span></span>
+<span class="line"><span style="color: #24292EFF">await function () {</span></span>
+<span class="line"><span style="color: #24292EFF">  response1 = await spaFetch(&#39;/users/10&#39;)</span></span>
+<span class="line"><span style="color: #24292EFF">  await sleep(300)</span></span>
+<span class="line"><span style="color: #24292EFF">  response2 = await spaFetch(&#39;/users/10&#39;) // This will trigger a second server call</span></span>
+<span class="line"><span style="color: #24292EFF">  </span></span>
+<span class="line"><span style="color: #24292EFF">  data1 = await response1.json()</span></span>
+<span class="line"><span style="color: #24292EFF">  data2 = await response2.json()</span></span>
+<span class="line empty-line"></span>
+<span class="line"><span style="color: #24292EFF">  console.log(data1)</span></span>
+<span class="line"><span style="color: #24292EFF">  console.log(data2)</span></span>
+<span class="line"><span style="color: #24292EFF">}</span></span></code></pre>
+</code></pre>
+<p>Unlike the previous case, in this case <em>two</em> calls will be made</p>
+<h3 id="setting-an-alternative-fetch-function">Setting an alternative fetch function</h3>
 
           
                   
-          <ul>
-<li>Use <a href="">lit-element</a>‘s and web component’s full potential</li>
-<li>Create custom themes or derivative elements easily</li>
-<li>Enjoy the fully literate source code</li>
-<li>Use these elements in your web application or single page application</li>
-</ul>
-<p><a href="https://glitch.com/edit/#!/mobily-enterprises-tpe-examples?path=designers/one.html:3:50">https://glitch.com/edit/#!/mobily-enterprises-tpe-examples?path=designers/one.html:3:50</a></p>
+          <p>If you want to run specific operations before and after the fetch call, you can define an alternative <code>fetch()</code> function:</p>
+<pre><code><pre class="shiki" style="background-color: transparent"><code ><span class="line"><span style="color: #24292EFF">import { spaFetch, spaFetchConfig } from &#39;@spa-fetch&#39;</span></span>
+<span class="line empty-line"></span>
+<span class="line"><span style="color: #24292EFF">spaFetchConfig.fetcher = (resource, init) =&gt; {</span></span>
+<span class="line"><span style="color: #24292EFF">  console.log(&#39;About to fetch...&#39;, resource)</span></span>
+<span class="line"><span style="color: #24292EFF">  const p = fetch(resource, init)</span></span>
+<span class="line empty-line"></span>
+<span class="line"><span style="color: #24292EFF">  p.then(</span></span>
+<span class="line"><span style="color: #24292EFF">    (response) =&gt; {</span></span>
+<span class="line"><span style="color: #24292EFF">      console.log(&#39;The response is:&#39;, response)</span></span>
+<span class="line"><span style="color: #24292EFF">    },</span></span>
+<span class="line"><span style="color: #24292EFF">    (error) =&gt; {</span></span>
+<span class="line"><span style="color: #24292EFF">      console.log(&#39;The error is:&#39;, error)</span></span>
+<span class="line"><span style="color: #24292EFF">    }  </span></span>
+<span class="line"><span style="color: #24292EFF">  )</span></span>
+<span class="line"><span style="color: #24292EFF">  return p</span></span>
+<span class="line"><span style="color: #24292EFF">}</span></span></code></pre>
+</code></pre>
+<p>This will ensure that specific code is run both before the actual <code>fetch()</code> is called, and once the response is received.</p>
 
           
         
@@ -194,18 +230,6 @@ There are three types of elements:</p>
                     documentation
                 </a>
             </li>
-          
-        
-          
-          
-            <li>
-                <a class="source " href="codelabs.html">
-                    codelabs
-                </a>
-            </li>
-          
-        
-          
           
         
           

@@ -48,18 +48,6 @@
             
             
               <li>
-                  <a class="source " href="codelabs.html">
-                      codelabs
-                  </a>
-              </li>
-            
-          
-            
-            
-          
-            
-            
-              <li>
                   <a class="source  current " href="literate-code.html">
                       literate code
                   </a>
@@ -98,22 +86,6 @@
               <li>
                 <a class="source " href="documentation.html">
                     documentation
-                </a>
-              </li>
-          
-            
-            
-              <li>
-                <a class="source " href="codelabs.html">
-                    codelabs
-                </a>
-              </li>
-          
-            
-            
-              <li>
-                <a class="source  indented " href="codelabs/how-to/index.html">
-                    codelabs &#8627; how to
                 </a>
               </li>
           
@@ -408,22 +380,11 @@ Here is the code:</p>
 <span class="line" id="L230"><span style="color: #24292EFF">    </span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">cachedItem</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">spaFetch</span><span style="color: #6F42C1">.</span><span style="color: #1976D2">cache</span><span style="color: #6F42C1">.get</span><span style="color: #24292EFF">(hash)</span></span>
 <span class="line empty-line" id="L231"></span>
 <span class="line" id="L232"><span style="color: #24292EFF">    </span><span style="color: #D32F2F">if</span><span style="color: #24292EFF"> (cachedItem </span><span style="color: #D32F2F">&amp;&amp;</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">cachedItem</span><span style="color: #24292EFF">.expires </span><span style="color: #D32F2F">&gt;=</span><span style="color: #24292EFF"> now) {</span></span>
-<span class="line" id="L233"><span style="color: #24292EFF">      </span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">responsePromise</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">new</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">Promise</span><span style="color: #24292EFF">((resolve</span><span style="color: #212121">,</span><span style="color: #24292EFF"> reject) </span><span style="color: #D32F2F">=&gt;</span><span style="color: #24292EFF"> {</span></span>
-<span class="line" id="L234"><span style="color: #24292EFF">        </span><span style="color: #1976D2">cachedItem</span><span style="color: #6F42C1">.</span><span style="color: #1976D2">fetchPromise</span><span style="color: #6F42C1">.then</span><span style="color: #24292EFF">(</span></span>
-<span class="line" id="L235"><span style="color: #24292EFF">          response </span><span style="color: #D32F2F">=&gt;</span><span style="color: #24292EFF"> {</span></span>
-<span class="line" id="L236"><span style="color: #24292EFF">            </span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">responseClone</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">response</span><span style="color: #6F42C1">.clone</span><span style="color: #24292EFF">()</span></span>
-<span class="line" id="L237"><span style="color: #24292EFF">            </span><span style="color: #6F42C1">resolve</span><span style="color: #24292EFF">(responseClone)</span></span>
-<span class="line" id="L238"><span style="color: #24292EFF">          }</span><span style="color: #212121">,</span></span>
-<span class="line" id="L239"><span style="color: #24292EFF">          error </span><span style="color: #D32F2F">=&gt;</span><span style="color: #24292EFF"> {</span></span>
-<span class="line" id="L240"><span style="color: #24292EFF">            </span><span style="color: #6F42C1">reject</span><span style="color: #24292EFF">(error)</span></span>
-<span class="line" id="L241"><span style="color: #24292EFF">          }</span></span>
-<span class="line" id="L242"><span style="color: #24292EFF">        )</span></span>
-<span class="line" id="L243"><span style="color: #24292EFF">      })</span></span>
-<span class="line" id="L244"><span style="color: #24292EFF">      </span><span style="color: #D32F2F">return</span><span style="color: #24292EFF"> responsePromise</span></span>
-<span class="line" id="L245"><span style="color: #24292EFF">    }</span></span>
-<span class="line" id="L246"><span style="color: #24292EFF">  }</span></span>
-<span class="line empty-line" id="L247"></span>
-<span class="line empty-line" id="L248"></span></code></pre>
+<span class="line" id="L233"><span style="color: #24292EFF">      </span><span style="color: #D32F2F">return</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">cachedItem</span><span style="color: #6F42C1">.</span><span style="color: #1976D2">fetchPromise</span><span style="color: #6F42C1">.then</span><span style="color: #24292EFF">(response </span><span style="color: #D32F2F">=&gt;</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">response</span><span style="color: #6F42C1">.clone</span><span style="color: #24292EFF">())</span></span>
+<span class="line" id="L234"><span style="color: #24292EFF">    }</span></span>
+<span class="line" id="L235"><span style="color: #24292EFF">  }</span></span>
+<span class="line empty-line" id="L236"></span>
+<span class="line empty-line" id="L237"></span></code></pre>
           
                   
           <p>If the call gets to this stage, it means that it <em>wasn’t</em> in the cache. This means that it will need
@@ -432,24 +393,24 @@ to be called.</p>
 will be expected to return a <code>fetch()</code> promise)</p>
 
           
-            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 253;"><span class="line" id="L253"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">let</span><span style="color: #24292EFF"> fetchPromise</span></span>
-<span class="line" id="L254"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">if</span><span style="color: #24292EFF"> (</span><span style="color: #1976D2">config</span><span style="color: #24292EFF">.fetcher) {</span></span>
-<span class="line" id="L255"><span style="color: #24292EFF">    fetchPromise </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">config</span><span style="color: #6F42C1">.fetcher</span><span style="color: #24292EFF">(resource</span><span style="color: #212121">,</span><span style="color: #24292EFF"> init)</span></span>
-<span class="line" id="L256"><span style="color: #24292EFF">  } </span><span style="color: #D32F2F">else</span><span style="color: #24292EFF"> {</span></span>
-<span class="line" id="L257"><span style="color: #24292EFF">    fetchPromise </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #6F42C1">fetch</span><span style="color: #24292EFF">(resource</span><span style="color: #212121">,</span><span style="color: #24292EFF"> init)</span></span>
-<span class="line" id="L258"><span style="color: #24292EFF">  }</span></span>
-<span class="line empty-line" id="L259"></span>
-<span class="line empty-line" id="L260"></span></code></pre>
+            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 242;"><span class="line" id="L242"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">let</span><span style="color: #24292EFF"> fetchPromise</span></span>
+<span class="line" id="L243"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">if</span><span style="color: #24292EFF"> (</span><span style="color: #1976D2">config</span><span style="color: #24292EFF">.fetcher) {</span></span>
+<span class="line" id="L244"><span style="color: #24292EFF">    fetchPromise </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">config</span><span style="color: #6F42C1">.fetcher</span><span style="color: #24292EFF">(resource</span><span style="color: #212121">,</span><span style="color: #24292EFF"> init)</span></span>
+<span class="line" id="L245"><span style="color: #24292EFF">  } </span><span style="color: #D32F2F">else</span><span style="color: #24292EFF"> {</span></span>
+<span class="line" id="L246"><span style="color: #24292EFF">    fetchPromise </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #6F42C1">fetch</span><span style="color: #24292EFF">(resource</span><span style="color: #212121">,</span><span style="color: #24292EFF"> init)</span></span>
+<span class="line" id="L247"><span style="color: #24292EFF">  }</span></span>
+<span class="line empty-line" id="L248"></span>
+<span class="line empty-line" id="L249"></span></code></pre>
           
                   
           <p>If the item is to be cached (see: <code>hash</code> is not empty), it will do so:</p>
 
           
-            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 261;"><span class="line" id="L261"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">if</span><span style="color: #24292EFF"> (hash) {</span></span>
-<span class="line" id="L262"><span style="color: #24292EFF">    </span><span style="color: #1976D2">spaFetch</span><span style="color: #6F42C1">.</span><span style="color: #1976D2">cache</span><span style="color: #6F42C1">.set</span><span style="color: #24292EFF">(hash</span><span style="color: #212121">,</span><span style="color: #24292EFF"> { fetchPromise</span><span style="color: #212121">,</span><span style="color: #24292EFF"> expires</span><span style="color: #D32F2F">:</span><span style="color: #24292EFF"> now </span><span style="color: #D32F2F">+</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">config</span><span style="color: #24292EFF">.cacheDuration })</span></span>
-<span class="line" id="L263"><span style="color: #24292EFF">  }</span></span>
-<span class="line empty-line" id="L264"></span>
-<span class="line empty-line" id="L265"></span></code></pre>
+            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 250;"><span class="line" id="L250"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">if</span><span style="color: #24292EFF"> (hash) {</span></span>
+<span class="line" id="L251"><span style="color: #24292EFF">    </span><span style="color: #1976D2">spaFetch</span><span style="color: #6F42C1">.</span><span style="color: #1976D2">cache</span><span style="color: #6F42C1">.set</span><span style="color: #24292EFF">(hash</span><span style="color: #212121">,</span><span style="color: #24292EFF"> { fetchPromise</span><span style="color: #212121">,</span><span style="color: #24292EFF"> expires</span><span style="color: #D32F2F">:</span><span style="color: #24292EFF"> now </span><span style="color: #D32F2F">+</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">config</span><span style="color: #24292EFF">.cacheDuration })</span></span>
+<span class="line" id="L252"><span style="color: #24292EFF">  }</span></span>
+<span class="line empty-line" id="L253"></span>
+<span class="line empty-line" id="L254"></span></code></pre>
           
                   
           <p>Even if the cache was empty, it’s still <em>paramount</em> to return a proxy promise (as explained above) rather than
@@ -457,28 +418,18 @@ the original <code>fetch()</code> promise, in order to prevent the case where <c
 value is rendered useless.</p>
 
           
-            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 268;"><span class="line" id="L268"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">return</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">new</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">Promise</span><span style="color: #24292EFF">((resolve</span><span style="color: #212121">,</span><span style="color: #24292EFF"> reject) </span><span style="color: #D32F2F">=&gt;</span><span style="color: #24292EFF"> {</span></span>
-<span class="line" id="L269"><span style="color: #24292EFF">    </span><span style="color: #1976D2">fetchPromise</span><span style="color: #6F42C1">.then</span><span style="color: #24292EFF">(</span></span>
-<span class="line" id="L270"><span style="color: #24292EFF">      response </span><span style="color: #D32F2F">=&gt;</span><span style="color: #24292EFF"> {</span></span>
-<span class="line" id="L271"><span style="color: #24292EFF">        </span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">responseClone</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">response</span><span style="color: #6F42C1">.clone</span><span style="color: #24292EFF">()</span></span>
-<span class="line" id="L272"><span style="color: #24292EFF">        </span><span style="color: #6F42C1">resolve</span><span style="color: #24292EFF">(responseClone)</span></span>
-<span class="line" id="L273"><span style="color: #24292EFF">      }</span><span style="color: #212121">,</span></span>
-<span class="line" id="L274"><span style="color: #24292EFF">      error </span><span style="color: #D32F2F">=&gt;</span><span style="color: #24292EFF"> {</span></span>
-<span class="line" id="L275"><span style="color: #24292EFF">        </span><span style="color: #6F42C1">reject</span><span style="color: #24292EFF">(error)</span></span>
-<span class="line" id="L276"><span style="color: #24292EFF">      }</span></span>
-<span class="line" id="L277"><span style="color: #24292EFF">    )</span></span>
-<span class="line" id="L278"><span style="color: #24292EFF">  })</span></span>
-<span class="line" id="L279"><span style="color: #24292EFF">}</span></span>
-<span class="line empty-line" id="L280"></span>
-<span class="line empty-line" id="L281"></span></code></pre>
+            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 258;"><span class="line" id="L258"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">return</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">fetchPromise</span><span style="color: #6F42C1">.then</span><span style="color: #24292EFF">(response </span><span style="color: #D32F2F">=&gt;</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">response</span><span style="color: #6F42C1">.clone</span><span style="color: #24292EFF">())</span></span>
+<span class="line" id="L259"><span style="color: #24292EFF">}</span></span>
+<span class="line empty-line" id="L260"></span>
+<span class="line empty-line" id="L261"></span></code></pre>
           
                   
           <p>The cache is a property of the <code>spaFetch()</code> function. This helps with testing</p>
 
           
-            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 282;"><span class="line" id="L282"><span style="color: #1976D2">spaFetch</span><span style="color: #24292EFF">.cache </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">new</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">Map</span><span style="color: #24292EFF">()</span></span>
-<span class="line empty-line" id="L283"></span>
-<span class="line empty-line" id="L284"></span></code></pre>
+            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 262;"><span class="line" id="L262"><span style="color: #1976D2">spaFetch</span><span style="color: #24292EFF">.cache </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">new</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">Map</span><span style="color: #24292EFF">()</span></span>
+<span class="line empty-line" id="L263"></span>
+<span class="line empty-line" id="L264"></span></code></pre>
           
                   
           <h1 id="conclusions">Conclusions</h1>
@@ -523,18 +474,6 @@ happening. Also, this module is the result of <a href="https://stackoverflow.com
                     documentation
                 </a>
             </li>
-          
-        
-          
-          
-            <li>
-                <a class="source " href="codelabs.html">
-                    codelabs
-                </a>
-            </li>
-          
-        
-          
           
         
           

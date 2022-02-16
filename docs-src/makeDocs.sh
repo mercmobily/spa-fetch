@@ -8,8 +8,9 @@ cp ../spa-fetch.js literate-code.js
   -o ../docs\
   index.md\
   documentation.md\
-  codelabs.md\
-  codelabs/how-to/index.md\
   literate-code.js
+  # codelabs.md\
+  # codelabs/how-to/index.md\
 
 cp -r ./images ../docs/
+cat documentation.md > ../README.md

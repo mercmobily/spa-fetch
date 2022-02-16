@@ -230,18 +230,7 @@ export const spaFetch = async (resource, init = {}) => {
     const cachedItem = spaFetch.cache.get(hash)
 
     if (cachedItem && cachedItem.expires >= now) {
-      const responsePromise = new Promise((resolve, reject) => {
-        cachedItem.fetchPromise.then(
-          response => {
-            const responseClone = response.clone()
-            resolve(responseClone)
-          },
-          error => {
-            reject(error)
-          }
-        )
-      })
-      return responsePromise
+      return cachedItem.fetchPromise.then(response => response.clone())
     }
   }
 
@@ -265,17 +254,8 @@ export const spaFetch = async (resource, init = {}) => {
 // Even if the cache was empty, it's still _paramount_ to return a proxy promise (as explained above) rather than
 // the original `fetch()` promise, in order to prevent the case where `await response.json()` is called -- and the cached
 // value is rendered useless.
-  return new Promise((resolve, reject) => {
-    fetchPromise.then(
-      response => {
-        const responseClone = response.clone()
-        resolve(responseClone)
-      },
-      error => {
-        reject(error)
-      }
-    )
-  })
+
+  return fetchPromise.then(response => response.clone())
 }
 
 // The cache is a property of the `spaFetch()` function. This helps with testing
