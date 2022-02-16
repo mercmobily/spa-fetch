@@ -1,5 +1,6 @@
 // # Spa-fetch
-// ## avoid repeated identical fetch() calls in a short amount of time
+//
+// ## Avoid repeated identical fetch() calls in a short amount of time
 //
 // spa-fetch is a wrapper to Javascript's native `fetch()` call which will prevent multiple fetch() **GET** calls being made
 // against the same URL in a short amount of time.
@@ -52,28 +53,28 @@ const config = spaFetchConfig
 // to be done knowing exactly which properties are important. Things are complicated by the fact that the properties `body` and `headers`
 // are special cases (`body` is exposed as a stream, and `headers` is a Map).
 //
-// * `resource` is a `Request` object, and `init` is an object. In this case, the browser will somehow create a new Request object using
-// `resource` as a starting point, but with the properties in `init` applied to it too. This means that the Request object `resource` might
-// have the `cache` property set as default. However, since `init` contains `{ cache: 'no-cache' }`, the final Request object will actually
+// * `resource` is a `Request` object, and `init` is an object. In this case, the browser will somehow create a new `Request` object using
+// `resource` as a starting point, but with the properties in `init` applied to it too. This means that the `Request` object `resource` might
+// have the `cache` property set as default. However, since `init` contains `{ cache: 'no-cache' }`, the final `Request` object will actually
 // have `no-cache` set for the `cache` property -- basically, the `init` object has the last say.
 //
 // The hashing needs to work reliably for two requests with identical parameters even in cases where those parameters are
 // set using different patterns seen above. For example, the hashes need to match for these two requests:
 //
-//    // `resource` is a URL string, and `init` is an object
-//    const res1 = await spaFetch('http://www.google.com', { cache: 'reload', headers: { 'x-something': 10 } })
+//     // `resource` is a URL string, and `init` is an object
+//     const res1 = await spaFetch('http://www.google.com', { cache: 'reload', headers: { 'x-something': 10 } })
 //
-//    // `resource` is a Request object created with cache as `reload`, and then
-//    // spaFetch called with `init` where cache is `reload`
-//    const request2 = new Request('http://www.google.com', { cache: 'no-cache', headers: { 'x-something': 10 }})
-//    const res2 = await spaFetch(request2, { cache: 'reload'})
+//     // `resource` is a Request object created with cache as `reload`, and then
+//     // spaFetch called with `init` where cache is `reload`
+//     const request2 = new Request('http://www.google.com', { cache: 'no-cache', headers: { 'x-something': 10 }})
+//     const res2 = await spaFetch(request2, { cache: 'reload'})
 //
 // This is an extreme example, but it shows how `request2`'s property for `cache` is then overridden by the
 // `prop` variable passed to `spaFetch`.
 //
-// The best way to have reliable comparisons is to always create a Request object (even when `spaFetch()` is called with `resource` being
-// a URL string), and comparing the relevant properties from the newly created Request object.
-// 
+// The best way to have reliable comparisons is to always create a `Request` object (even when `spaFetch()` is called with `resource` being
+// a URL string), and comparing the relevant properties from the newly created `Request` object.
+//
 // This is done in two blocks of code; they both aim at creating two variables `finalInit` and `finalUrl` which
 // will be used to create the hash.
 //
@@ -88,35 +89,31 @@ function makeHash (resource, init) {
   const allowedInitProperties = ['method', 'mode', 'credentials', 'cache', 'redirect', 'referrer', 'integrity', 'headers']
 
 // This is the full list of properties which make a request unique. Note that `body` is missing, since `spaFetch()` will only
-// ever cache `GET` requests. (Luckily so: `body` is also defined as a stream in a Request object, and it would me difficult to
+// ever cache `GET` requests. (Luckily so: `body` is also defined as a stream in a `Request` object, and it would me difficult to
 // serialise).
 //
-// The first case considered is where the `resource` parameter is a URL string, rather than a Request:
+// The first case considered is where the `resource` parameter is a URL string, rather than a `Request`:
 
-  // FIRST PARAMETER IS A URL!
-  // ----------------------------
+  /* FIRST PARAMETER IS A URL!    */
+  /* ---------------------------- */
   if (!(resource instanceof Request)) {
     finalRequest = new Request(resource, init)
     for (const prop of allowedInitProperties) finalInit[prop] = finalRequest[prop]
     finalUrl = finalRequest.url
 
 // This is the simple case. A new request is created, based on the `resource` (which is a URL string) and the `init` object.
-// While this may seem wasteful, it will ensure that any kind of property normalisation carried out by the Request constuctor
+// While this may seem wasteful, it will ensure that any kind of property normalisation carried out by the `Request` constuctor
 // doesn't affect comparison.
 // So, first a new request is created (in `finalRequest`). Then finalInit is created, by talking all of the allowed init
 // properties over from the newly created `Request`. Finally, finalUrl is set, taken from the `url` property of the newly
 // created request (`finalRequest.url`).
 //
-// A much more involved process is needed in case the `resource` parameter if an instance of Request:
+// A much more involved process is needed in case the `resource` parameter if an instance of `Request`:
 
     /* FIRST PARAMETER IS A REQUEST! */
     /* ----------------------------- */
-    /* It will make up a request with the same passed parameters, and will */
-    /* make up finalInit with the corresponding properties                 */
   } else {
     const originalRequest = resource
-    /* If an init is specified, then make a new request with a mix of */
-    /* the values from the original request, AND the extra init ones  */
     if (!init) {
       finalRequest = resource
       for (const prop of allowedInitProperties) finalInit[prop] = originalRequest[prop]
