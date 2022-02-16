@@ -2,7 +2,7 @@
 //
 // ## Avoid repeated identical fetch() calls in a short amount of time
 //
-// spa-fetch is a wrapper to Javascript's native `fetch()` call which will prevent multiple fetch() **GET** calls being made
+// spa-fetch is a wrapper to Javascript's native `fetch()` call which will prevent multiple `fetch()` **GET** calls being made
 // against the same URL in a short amount of time.
 //
 // It also provides hooks which will allow specific code to be run before and after each fetch call.
@@ -249,7 +249,7 @@ export const spaFetch = async (resource, init = {}) => {
 // to be called.
 //
 // Note that developers are able to change the module's configuration to use a different fetching function (which
-// will be expected to return a fetch() promise)
+// will be expected to return a `fetch()` promise)
   let fetchPromise
   if (config.fetcher) {
     fetchPromise = config.fetcher(resource, init)

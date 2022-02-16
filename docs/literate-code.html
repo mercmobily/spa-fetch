@@ -140,7 +140,7 @@
 
           
                   
-          <p>spa-fetch is a wrapper to Javascript’s native <code>fetch()</code> call which will prevent multiple fetch() <strong>GET</strong> calls being made
+          <p>spa-fetch is a wrapper to Javascript’s native <code>fetch()</code> call which will prevent multiple <code>fetch()</code> <strong>GET</strong> calls being made
 against the same URL in a short amount of time.</p>
 <p>It also provides hooks which will allow specific code to be run before and after each fetch call.</p>
 <h2 id="use-cases">Use cases</h2>
@@ -429,7 +429,7 @@ Here is the code:</p>
           <p>If the call gets to this stage, it means that it <em>wasn’t</em> in the cache. This means that it will need
 to be called.</p>
 <p>Note that developers are able to change the module’s configuration to use a different fetching function (which
-will be expected to return a fetch() promise)</p>
+will be expected to return a <code>fetch()</code> promise)</p>
 
           
             <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 253;"><span class="line" id="L253"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">let</span><span style="color: #24292EFF"> fetchPromise</span></span>
