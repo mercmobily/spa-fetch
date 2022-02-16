@@ -193,9 +193,9 @@ has one already created. In terms of creating the hash, this is a very difficult
 to be done knowing exactly which properties are important. Things are complicated by the fact that the properties <code>body</code> and <code>headers</code>
 are special cases (<code>body</code> is exposed as a stream, and <code>headers</code> is a Map).</p>
 </li>
-<li><p><code>resource</code> is a <code>Request</code> object, and <code>init</code> is an object. In this case, the browser will somehow create a new Request object using
-<code>resource</code> as a starting point, but with the properties in <code>init</code> applied to it too. This means that the Request object <code>resource</code> might
-have the <code>cache</code> property set as default. However, since <code>init</code> contains <code>{ cache: &#39;no-cache&#39; }</code>, the final Request object will actually
+<li><p><code>resource</code> is a <code>Request</code> object, and <code>init</code> is an object. In this case, the browser will somehow create a new <code>Request</code> object using
+<code>resource</code> as a starting point, but with the properties in <code>init</code> applied to it too. This means that the <code>Request</code> object <code>resource</code> might
+have the <code>cache</code> property set as default. However, since <code>init</code> contains <code>{ cache: &#39;no-cache&#39; }</code>, the final <code>Request</code> object will actually
 have <code>no-cache</code> set for the <code>cache</code> property – basically, the <code>init</code> object has the last say.</p>
 </li>
 </ul>
@@ -211,8 +211,8 @@ set using different patterns seen above. For example, the hashes need to match f
 </code></pre>
 <p>This is an extreme example, but it shows how <code>request2</code>‘s property for <code>cache</code> is then overridden by the
 <code>prop</code> variable passed to <code>spaFetch</code>.</p>
-<p>The best way to have reliable comparisons is to always create a Request object (even when <code>spaFetch()</code> is called with <code>resource</code> being
-a URL string), and comparing the relevant properties from the newly created Request object.</p>
+<p>The best way to have reliable comparisons is to always create a <code>Request</code> object (even when <code>spaFetch()</code> is called with <code>resource</code> being
+a URL string), and comparing the relevant properties from the newly created <code>Request</code> object.</p>
 <p>This is done in two blocks of code; they both aim at creating two variables <code>finalInit</code> and <code>finalUrl</code> which
 will be used to create the hash.</p>
 <p>Here is how it works:</p>
@@ -234,9 +234,9 @@ will be used to create the hash.</p>
           
                   
           <p>This is the full list of properties which make a request unique. Note that <code>body</code> is missing, since <code>spaFetch()</code> will only
-ever cache <code>GET</code> requests. (Luckily so: <code>body</code> is also defined as a stream in a Request object, and it would me difficult to
+ever cache <code>GET</code> requests. (Luckily so: <code>body</code> is also defined as a stream in a <code>Request</code> object, and it would me difficult to
 serialise).</p>
-<p>The first case considered is where the <code>resource</code> parameter is a URL string, rather than a Request:</p>
+<p>The first case considered is where the <code>resource</code> parameter is a URL string, rather than a <code>Request</code>:</p>
 
           
             <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 97;"><span class="line" id="L97"><span style="color: #24292EFF">  </span><span style="color: #C2C3C5">/* FIRST PARAMETER IS A URL!    */</span></span>
@@ -250,12 +250,12 @@ serialise).</p>
           
                   
           <p>This is the simple case. A new request is created, based on the <code>resource</code> (which is a URL string) and the <code>init</code> object.
-While this may seem wasteful, it will ensure that any kind of property normalisation carried out by the Request constuctor
+While this may seem wasteful, it will ensure that any kind of property normalisation carried out by the <code>Request</code> constuctor
 doesn’t affect comparison.
 So, first a new request is created (in <code>finalRequest</code>). Then finalInit is created, by talking all of the allowed init
 properties over from the newly created <code>Request</code>. Finally, finalUrl is set, taken from the <code>url</code> property of the newly
 created request (<code>finalRequest.url</code>).</p>
-<p>A much more involved process is needed in case the <code>resource</code> parameter if an instance of Request:</p>
+<p>A much more involved process is needed in case the <code>resource</code> parameter if an instance of <code>Request</code>:</p>
 
           
             <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 113;"><span class="line" id="L113"><span style="color: #24292EFF">    </span><span style="color: #C2C3C5">/* FIRST PARAMETER IS A REQUEST! */</span></span>
