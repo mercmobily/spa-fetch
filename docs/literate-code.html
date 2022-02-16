@@ -3,7 +3,7 @@
 
 <html lang="en">
 <head>
-  <title>literate-code.js</title>
+  <title>Spa-fetch</title>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <link rel="stylesheet" media="all" href="template.css" />
@@ -21,7 +21,7 @@
   <ee-header id="header" class="header" >
     <div slot="header-title" style="display: flex;">
       <div id="logo" alt="TPE"></div>
-      <h3 class="page-title" >literate-code.js</h3>
+      <h3 class="page-title" >Spa-fetch</h3>
     </div>
     
       <nav class="header-menu" slot="actions" role="navigation">
@@ -136,21 +136,6 @@
         <article class="literate-code.js">
       
                   
-          
-          
-            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 1;"><span class="line" id="L1"><span style="color: #C2C3C5">/* TODO</span></span>
-<span class="line" id="L2"><span style="color: #C2C3C5">  Make code literate</span></span>
-<span class="line" id="L3"><span style="color: #C2C3C5">  Make decent web site</span></span>
-<span class="line" id="L4"><span style="color: #C2C3C5">*/</span></span>
-<span class="line empty-line" id="L5"></span>
-<span class="line empty-line" id="L6"></span></code></pre>
-          
-                  
-          <p><a href="https://codereview.stackexchange.com/questions/274119/configuration-of-an-es6-module-that-provides-a-fetch-temporary-cache">https://codereview.stackexchange.com/questions/274119/configuration-of-an-es6-module-that-provides-a-fetch-temporary-cache</a></p>
-<h1 id="spa-fetch">Spa-fetch</h1>
-
-          
-                  
           <h2 id="avoid-repeated-identical-fetch-calls-in-a-short-amount-of-time">avoid repeated identical fetch() calls in a short amount of time</h2>
 
           
@@ -177,13 +162,13 @@ dialog to re-login.</p>
           <p>spa-fetch can be configured by simply changing the exported object spaFetchConfig, defined like so:</p>
 
           
-            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 33;"><span class="line" id="L33"><span style="color: #D32F2F">export</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">spaFetchConfig</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> {</span></span>
-<span class="line" id="L34"><span style="color: #24292EFF">  cacheDuration</span><span style="color: #D32F2F">:</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">1000</span><span style="color: #212121">,</span></span>
-<span class="line" id="L35"><span style="color: #24292EFF">  fetcher</span><span style="color: #D32F2F">:</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">null</span></span>
-<span class="line" id="L36"><span style="color: #24292EFF">}</span></span>
-<span class="line" id="L37"><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">config</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> spaFetchConfig</span></span>
-<span class="line empty-line" id="L38"></span>
-<span class="line empty-line" id="L39"></span></code></pre>
+            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 26;"><span class="line" id="L26"><span style="color: #D32F2F">export</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">spaFetchConfig</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> {</span></span>
+<span class="line" id="L27"><span style="color: #24292EFF">  cacheDuration</span><span style="color: #D32F2F">:</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">1000</span><span style="color: #212121">,</span></span>
+<span class="line" id="L28"><span style="color: #24292EFF">  fetcher</span><span style="color: #D32F2F">:</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">null</span></span>
+<span class="line" id="L29"><span style="color: #24292EFF">}</span></span>
+<span class="line" id="L30"><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">config</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> spaFetchConfig</span></span>
+<span class="line empty-line" id="L31"></span>
+<span class="line empty-line" id="L32"></span></code></pre>
           
                   
           <h2 id="creating-a-unique-string-out-of-fetchs-parameters">Creating a unique string out of <code>fetch()</code>‘s parameters</h2>
@@ -231,19 +216,19 @@ will be used to create the hash.</p>
 <p>Here is how it works:</p>
 
           
-            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 89;"><span class="line" id="L89"><span style="color: #D32F2F">function</span><span style="color: #24292EFF"> </span><span style="color: #6F42C1">makeHash</span><span style="color: #24292EFF"> (resource</span><span style="color: #212121">,</span><span style="color: #24292EFF"> init) {</span></span>
-<span class="line empty-line" id="L90"></span></code></pre>
+            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 82;"><span class="line" id="L82"><span style="color: #D32F2F">function</span><span style="color: #24292EFF"> </span><span style="color: #6F42C1">makeHash</span><span style="color: #24292EFF"> (resource</span><span style="color: #212121">,</span><span style="color: #24292EFF"> init) {</span></span>
+<span class="line empty-line" id="L83"></span></code></pre>
           
                   
           
           
-            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 91;"><span class="line" id="L91"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">finalInit</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> {}</span></span>
-<span class="line" id="L92"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">let</span><span style="color: #24292EFF"> finalUrl </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #22863A">&#39;&#39;</span></span>
-<span class="line" id="L93"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">let</span><span style="color: #24292EFF"> finalRequest</span></span>
-<span class="line empty-line" id="L94"></span>
-<span class="line" id="L95"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">allowedInitProperties</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> [</span><span style="color: #22863A">&#39;method&#39;</span><span style="color: #212121">,</span><span style="color: #24292EFF"> </span><span style="color: #22863A">&#39;mode&#39;</span><span style="color: #212121">,</span><span style="color: #24292EFF"> </span><span style="color: #22863A">&#39;credentials&#39;</span><span style="color: #212121">,</span><span style="color: #24292EFF"> </span><span style="color: #22863A">&#39;cache&#39;</span><span style="color: #212121">,</span><span style="color: #24292EFF"> </span><span style="color: #22863A">&#39;redirect&#39;</span><span style="color: #212121">,</span><span style="color: #24292EFF"> </span><span style="color: #22863A">&#39;referrer&#39;</span><span style="color: #212121">,</span><span style="color: #24292EFF"> </span><span style="color: #22863A">&#39;integrity&#39;</span><span style="color: #212121">,</span><span style="color: #24292EFF"> </span><span style="color: #22863A">&#39;headers&#39;</span><span style="color: #24292EFF">]</span></span>
-<span class="line empty-line" id="L96"></span>
-<span class="line empty-line" id="L97"></span></code></pre>
+            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 84;"><span class="line" id="L84"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">finalInit</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> {}</span></span>
+<span class="line" id="L85"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">let</span><span style="color: #24292EFF"> finalUrl </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #22863A">&#39;&#39;</span></span>
+<span class="line" id="L86"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">let</span><span style="color: #24292EFF"> finalRequest</span></span>
+<span class="line empty-line" id="L87"></span>
+<span class="line" id="L88"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">allowedInitProperties</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> [</span><span style="color: #22863A">&#39;method&#39;</span><span style="color: #212121">,</span><span style="color: #24292EFF"> </span><span style="color: #22863A">&#39;mode&#39;</span><span style="color: #212121">,</span><span style="color: #24292EFF"> </span><span style="color: #22863A">&#39;credentials&#39;</span><span style="color: #212121">,</span><span style="color: #24292EFF"> </span><span style="color: #22863A">&#39;cache&#39;</span><span style="color: #212121">,</span><span style="color: #24292EFF"> </span><span style="color: #22863A">&#39;redirect&#39;</span><span style="color: #212121">,</span><span style="color: #24292EFF"> </span><span style="color: #22863A">&#39;referrer&#39;</span><span style="color: #212121">,</span><span style="color: #24292EFF"> </span><span style="color: #22863A">&#39;integrity&#39;</span><span style="color: #212121">,</span><span style="color: #24292EFF"> </span><span style="color: #22863A">&#39;headers&#39;</span><span style="color: #24292EFF">]</span></span>
+<span class="line empty-line" id="L89"></span>
+<span class="line empty-line" id="L90"></span></code></pre>
           
                   
           <p>This is the full list of properties which make a request unique. Note that <code>body</code> is missing, since <code>spaFetch()</code> will only
@@ -256,12 +241,12 @@ serialise).</p>
                   
           
           
-            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 105;"><span class="line" id="L105"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">if</span><span style="color: #24292EFF"> (</span><span style="color: #D32F2F">!</span><span style="color: #24292EFF">(resource </span><span style="color: #D32F2F">instanceof</span><span style="color: #24292EFF"> </span><span style="color: #6F42C1">Request</span><span style="color: #24292EFF">)) {</span></span>
-<span class="line" id="L106"><span style="color: #24292EFF">    finalRequest </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">new</span><span style="color: #24292EFF"> </span><span style="color: #6F42C1">Request</span><span style="color: #24292EFF">(resource</span><span style="color: #212121">,</span><span style="color: #24292EFF"> init)</span></span>
-<span class="line" id="L107"><span style="color: #24292EFF">    </span><span style="color: #D32F2F">for</span><span style="color: #24292EFF"> (</span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">prop</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">of</span><span style="color: #24292EFF"> allowedInitProperties) finalInit[prop] </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> finalRequest[prop]</span></span>
-<span class="line" id="L108"><span style="color: #24292EFF">    finalUrl </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">finalRequest</span><span style="color: #24292EFF">.url</span></span>
-<span class="line empty-line" id="L109"></span>
-<span class="line empty-line" id="L110"></span></code></pre>
+            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 98;"><span class="line" id="L98"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">if</span><span style="color: #24292EFF"> (</span><span style="color: #D32F2F">!</span><span style="color: #24292EFF">(resource </span><span style="color: #D32F2F">instanceof</span><span style="color: #24292EFF"> </span><span style="color: #6F42C1">Request</span><span style="color: #24292EFF">)) {</span></span>
+<span class="line" id="L99"><span style="color: #24292EFF">    finalRequest </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">new</span><span style="color: #24292EFF"> </span><span style="color: #6F42C1">Request</span><span style="color: #24292EFF">(resource</span><span style="color: #212121">,</span><span style="color: #24292EFF"> init)</span></span>
+<span class="line" id="L100"><span style="color: #24292EFF">    </span><span style="color: #D32F2F">for</span><span style="color: #24292EFF"> (</span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">prop</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">of</span><span style="color: #24292EFF"> allowedInitProperties) finalInit[prop] </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> finalRequest[prop]</span></span>
+<span class="line" id="L101"><span style="color: #24292EFF">    finalUrl </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">finalRequest</span><span style="color: #24292EFF">.url</span></span>
+<span class="line empty-line" id="L102"></span>
+<span class="line empty-line" id="L103"></span></code></pre>
           
                   
           <p>This is the simple case. A new request is created, based on the <code>resource</code> (which is a URL string) and the <code>init</code> object.
@@ -273,28 +258,28 @@ created request (<code>finalRequest.url</code>).</p>
 <p>A much more involved process is needed in case the <code>resource</code> parameter if an instance of Request:</p>
 
           
-            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 119;"><span class="line" id="L119"><span style="color: #24292EFF">    </span><span style="color: #C2C3C5">/* FIRST PARAMETER IS A REQUEST! */</span></span>
-<span class="line" id="L120"><span style="color: #24292EFF">    </span><span style="color: #C2C3C5">/* ----------------------------- */</span></span>
-<span class="line" id="L121"><span style="color: #24292EFF">    </span><span style="color: #C2C3C5">/* It will make up a request with the same passed parameters, and will */</span></span>
-<span class="line" id="L122"><span style="color: #24292EFF">    </span><span style="color: #C2C3C5">/* make up finalInit with the corresponding properties                 */</span></span>
-<span class="line" id="L123"><span style="color: #24292EFF">  } </span><span style="color: #D32F2F">else</span><span style="color: #24292EFF"> {</span></span>
-<span class="line" id="L124"><span style="color: #24292EFF">    </span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">originalRequest</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> resource</span></span>
-<span class="line" id="L125"><span style="color: #24292EFF">    </span><span style="color: #C2C3C5">/* If an init is specified, then make a new request with a mix of */</span></span>
-<span class="line" id="L126"><span style="color: #24292EFF">    </span><span style="color: #C2C3C5">/* the values from the original request, AND the extra init ones  */</span></span>
-<span class="line" id="L127"><span style="color: #24292EFF">    </span><span style="color: #D32F2F">if</span><span style="color: #24292EFF"> (</span><span style="color: #D32F2F">!</span><span style="color: #24292EFF">init) {</span></span>
-<span class="line" id="L128"><span style="color: #24292EFF">      finalRequest </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> resource</span></span>
-<span class="line" id="L129"><span style="color: #24292EFF">      </span><span style="color: #D32F2F">for</span><span style="color: #24292EFF"> (</span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">prop</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">of</span><span style="color: #24292EFF"> allowedInitProperties) finalInit[prop] </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> originalRequest[prop]</span></span>
-<span class="line" id="L130"><span style="color: #24292EFF">      finalUrl </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">finalRequest</span><span style="color: #24292EFF">.url</span></span>
-<span class="line" id="L131"><span style="color: #24292EFF">    } </span><span style="color: #D32F2F">else</span><span style="color: #24292EFF"> {</span></span>
-<span class="line" id="L132"><span style="color: #24292EFF">      </span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">originalRequestInit</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> {}</span></span>
-<span class="line" id="L133"><span style="color: #24292EFF">      </span><span style="color: #D32F2F">for</span><span style="color: #24292EFF"> (</span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">prop</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">of</span><span style="color: #24292EFF"> allowedInitProperties) originalRequestInit[prop] </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> originalRequest[prop]</span></span>
-<span class="line" id="L134"><span style="color: #24292EFF">      finalRequest </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">new</span><span style="color: #24292EFF"> </span><span style="color: #6F42C1">Request</span><span style="color: #24292EFF">(</span><span style="color: #1976D2">originalRequest</span><span style="color: #24292EFF">.url</span><span style="color: #212121">,</span><span style="color: #24292EFF"> { </span><span style="color: #D32F2F">...</span><span style="color: #24292EFF">originalRequestInit</span><span style="color: #212121">,</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">...</span><span style="color: #24292EFF">init })</span></span>
-<span class="line" id="L135"><span style="color: #24292EFF">      </span><span style="color: #D32F2F">for</span><span style="color: #24292EFF"> (</span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">prop</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">of</span><span style="color: #24292EFF"> allowedInitProperties) finalInit[prop] </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> finalRequest[prop]</span></span>
-<span class="line" id="L136"><span style="color: #24292EFF">      finalUrl </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">originalRequest</span><span style="color: #24292EFF">.url</span></span>
-<span class="line" id="L137"><span style="color: #24292EFF">    }</span></span>
-<span class="line" id="L138"><span style="color: #24292EFF">  }</span></span>
-<span class="line empty-line" id="L139"></span>
-<span class="line empty-line" id="L140"></span></code></pre>
+            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 112;"><span class="line" id="L112"><span style="color: #24292EFF">    </span><span style="color: #C2C3C5">/* FIRST PARAMETER IS A REQUEST! */</span></span>
+<span class="line" id="L113"><span style="color: #24292EFF">    </span><span style="color: #C2C3C5">/* ----------------------------- */</span></span>
+<span class="line" id="L114"><span style="color: #24292EFF">    </span><span style="color: #C2C3C5">/* It will make up a request with the same passed parameters, and will */</span></span>
+<span class="line" id="L115"><span style="color: #24292EFF">    </span><span style="color: #C2C3C5">/* make up finalInit with the corresponding properties                 */</span></span>
+<span class="line" id="L116"><span style="color: #24292EFF">  } </span><span style="color: #D32F2F">else</span><span style="color: #24292EFF"> {</span></span>
+<span class="line" id="L117"><span style="color: #24292EFF">    </span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">originalRequest</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> resource</span></span>
+<span class="line" id="L118"><span style="color: #24292EFF">    </span><span style="color: #C2C3C5">/* If an init is specified, then make a new request with a mix of */</span></span>
+<span class="line" id="L119"><span style="color: #24292EFF">    </span><span style="color: #C2C3C5">/* the values from the original request, AND the extra init ones  */</span></span>
+<span class="line" id="L120"><span style="color: #24292EFF">    </span><span style="color: #D32F2F">if</span><span style="color: #24292EFF"> (</span><span style="color: #D32F2F">!</span><span style="color: #24292EFF">init) {</span></span>
+<span class="line" id="L121"><span style="color: #24292EFF">      finalRequest </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> resource</span></span>
+<span class="line" id="L122"><span style="color: #24292EFF">      </span><span style="color: #D32F2F">for</span><span style="color: #24292EFF"> (</span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">prop</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">of</span><span style="color: #24292EFF"> allowedInitProperties) finalInit[prop] </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> originalRequest[prop]</span></span>
+<span class="line" id="L123"><span style="color: #24292EFF">      finalUrl </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">finalRequest</span><span style="color: #24292EFF">.url</span></span>
+<span class="line" id="L124"><span style="color: #24292EFF">    } </span><span style="color: #D32F2F">else</span><span style="color: #24292EFF"> {</span></span>
+<span class="line" id="L125"><span style="color: #24292EFF">      </span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">originalRequestInit</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> {}</span></span>
+<span class="line" id="L126"><span style="color: #24292EFF">      </span><span style="color: #D32F2F">for</span><span style="color: #24292EFF"> (</span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">prop</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">of</span><span style="color: #24292EFF"> allowedInitProperties) originalRequestInit[prop] </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> originalRequest[prop]</span></span>
+<span class="line" id="L127"><span style="color: #24292EFF">      finalRequest </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">new</span><span style="color: #24292EFF"> </span><span style="color: #6F42C1">Request</span><span style="color: #24292EFF">(</span><span style="color: #1976D2">originalRequest</span><span style="color: #24292EFF">.url</span><span style="color: #212121">,</span><span style="color: #24292EFF"> { </span><span style="color: #D32F2F">...</span><span style="color: #24292EFF">originalRequestInit</span><span style="color: #212121">,</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">...</span><span style="color: #24292EFF">init })</span></span>
+<span class="line" id="L128"><span style="color: #24292EFF">      </span><span style="color: #D32F2F">for</span><span style="color: #24292EFF"> (</span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">prop</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">of</span><span style="color: #24292EFF"> allowedInitProperties) finalInit[prop] </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> finalRequest[prop]</span></span>
+<span class="line" id="L129"><span style="color: #24292EFF">      finalUrl </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">originalRequest</span><span style="color: #24292EFF">.url</span></span>
+<span class="line" id="L130"><span style="color: #24292EFF">    }</span></span>
+<span class="line" id="L131"><span style="color: #24292EFF">  }</span></span>
+<span class="line empty-line" id="L132"></span>
+<span class="line empty-line" id="L133"></span></code></pre>
           
                   
           <p>In this case, there are two distinct possibilities: one where the <code>init</code> object is passed, and one where it’s not.</p>
@@ -313,41 +298,41 @@ First of all, if the method is different to <code>GET</code> (in capital letters
 will return an empty string. This will mean ‘no caching’:</p>
 
           
-            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 159;"><span class="line" id="L159"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">if</span><span style="color: #24292EFF"> (</span><span style="color: #1976D2">finalInit</span><span style="color: #24292EFF">.method </span><span style="color: #D32F2F">!==</span><span style="color: #24292EFF"> </span><span style="color: #22863A">&#39;GET&#39;</span><span style="color: #24292EFF">) </span><span style="color: #D32F2F">return</span><span style="color: #24292EFF"> </span><span style="color: #22863A">&#39;&#39;</span></span>
-<span class="line empty-line" id="L160"></span>
-<span class="line empty-line" id="L161"></span></code></pre>
+            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 152;"><span class="line" id="L152"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">if</span><span style="color: #24292EFF"> (</span><span style="color: #1976D2">finalInit</span><span style="color: #24292EFF">.method </span><span style="color: #D32F2F">!==</span><span style="color: #24292EFF"> </span><span style="color: #22863A">&#39;GET&#39;</span><span style="color: #24292EFF">) </span><span style="color: #D32F2F">return</span><span style="color: #24292EFF"> </span><span style="color: #22863A">&#39;&#39;</span></span>
+<span class="line empty-line" id="L153"></span>
+<span class="line empty-line" id="L154"></span></code></pre>
           
                   
           <p>Also, any empty value is filtered out of <code>finalInit</code>:</p>
 
           
-            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 163;"><span class="line" id="L163"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">for</span><span style="color: #24292EFF"> (</span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">k</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">in</span><span style="color: #24292EFF"> finalInit) {</span></span>
-<span class="line" id="L164"><span style="color: #24292EFF">    </span><span style="color: #D32F2F">if</span><span style="color: #24292EFF"> (</span><span style="color: #D32F2F">typeof</span><span style="color: #24292EFF"> finalInit[k] </span><span style="color: #D32F2F">===</span><span style="color: #24292EFF"> </span><span style="color: #22863A">&#39;undefined&#39;</span><span style="color: #24292EFF">) </span><span style="color: #D32F2F">delete</span><span style="color: #24292EFF"> finalInit[k]</span></span>
-<span class="line" id="L165"><span style="color: #24292EFF">  }</span></span>
-<span class="line empty-line" id="L166"></span>
-<span class="line empty-line" id="L167"></span></code></pre>
+            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 156;"><span class="line" id="L156"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">for</span><span style="color: #24292EFF"> (</span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">k</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">in</span><span style="color: #24292EFF"> finalInit) {</span></span>
+<span class="line" id="L157"><span style="color: #24292EFF">    </span><span style="color: #D32F2F">if</span><span style="color: #24292EFF"> (</span><span style="color: #D32F2F">typeof</span><span style="color: #24292EFF"> finalInit[k] </span><span style="color: #D32F2F">===</span><span style="color: #24292EFF"> </span><span style="color: #22863A">&#39;undefined&#39;</span><span style="color: #24292EFF">) </span><span style="color: #D32F2F">delete</span><span style="color: #24292EFF"> finalInit[k]</span></span>
+<span class="line" id="L158"><span style="color: #24292EFF">  }</span></span>
+<span class="line empty-line" id="L159"></span>
+<span class="line empty-line" id="L160"></span></code></pre>
           
                   
           <p>This is the function’s home stretch. There is yet one last gotcha: the <code>headers</code> property behaves like a map, rather than like
 an object or an array. That <code>Object.fromEntries()</code> will ensure that it’s converted into an object before running <code>canonicalize()</code> on it:</p>
 
           
-            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 170;"><span class="line" id="L170"><span style="color: #24292EFF">  </span><span style="color: #1976D2">finalInit</span><span style="color: #24292EFF">.headers </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #6F42C1">canonicalize</span><span style="color: #24292EFF">(</span><span style="color: #1976D2">Object</span><span style="color: #6F42C1">.fromEntries</span><span style="color: #24292EFF">(</span><span style="color: #1976D2">finalInit</span><span style="color: #24292EFF">.headers))</span></span>
-<span class="line" id="L171"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">items</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #6F42C1">canonicalize</span><span style="color: #24292EFF">(finalInit)</span></span>
-<span class="line empty-line" id="L172"></span>
-<span class="line empty-line" id="L173"></span></code></pre>
+            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 163;"><span class="line" id="L163"><span style="color: #24292EFF">  </span><span style="color: #1976D2">finalInit</span><span style="color: #24292EFF">.headers </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #6F42C1">canonicalize</span><span style="color: #24292EFF">(</span><span style="color: #1976D2">Object</span><span style="color: #6F42C1">.fromEntries</span><span style="color: #24292EFF">(</span><span style="color: #1976D2">finalInit</span><span style="color: #24292EFF">.headers))</span></span>
+<span class="line" id="L164"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">items</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #6F42C1">canonicalize</span><span style="color: #24292EFF">(finalInit)</span></span>
+<span class="line empty-line" id="L165"></span>
+<span class="line empty-line" id="L166"></span></code></pre>
           
                   
           <p>Thanks to <code>canonicalize()</code> (explained in the next paragraph), the <code>items</code> variable is an array. The last step is to add the URL to it,
 and return the <code>stringify()</code> version of it: the work is done.</p>
 
           
-            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 176;"><span class="line" id="L176"><span style="color: #24292EFF">  </span><span style="color: #1976D2">items</span><span style="color: #6F42C1">.unshift</span><span style="color: #24292EFF">(finalUrl </span><span style="color: #D32F2F">+</span><span style="color: #24292EFF"> </span><span style="color: #22863A">&#39; &#39;</span><span style="color: #24292EFF">)</span></span>
-<span class="line empty-line" id="L177"></span>
-<span class="line" id="L178"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">return</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">JSON</span><span style="color: #6F42C1">.stringify</span><span style="color: #24292EFF">(items)</span></span>
-<span class="line" id="L179"><span style="color: #24292EFF">}</span></span>
-<span class="line empty-line" id="L180"></span>
-<span class="line empty-line" id="L181"></span></code></pre>
+            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 169;"><span class="line" id="L169"><span style="color: #24292EFF">  </span><span style="color: #1976D2">items</span><span style="color: #6F42C1">.unshift</span><span style="color: #24292EFF">(finalUrl </span><span style="color: #D32F2F">+</span><span style="color: #24292EFF"> </span><span style="color: #22863A">&#39; &#39;</span><span style="color: #24292EFF">)</span></span>
+<span class="line empty-line" id="L170"></span>
+<span class="line" id="L171"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">return</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">JSON</span><span style="color: #6F42C1">.stringify</span><span style="color: #24292EFF">(items)</span></span>
+<span class="line" id="L172"><span style="color: #24292EFF">}</span></span>
+<span class="line empty-line" id="L173"></span>
+<span class="line empty-line" id="L174"></span></code></pre>
           
                   
           <p>The lines above use the <code>canonicalize()</code> function to convert a parameter into an array. The reason this happens, is to ensure that
@@ -357,17 +342,17 @@ were defined in. The problem is that <code>JSON.stringify({a:10, b: 20})</code> 
 return the same value regardless of the order in which the properties were defined.</p>
 
           
-            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 187;"><span class="line" id="L187"><span style="color: #D32F2F">function</span><span style="color: #24292EFF"> </span><span style="color: #6F42C1">canonicalize</span><span style="color: #24292EFF"> (obj) {</span></span>
-<span class="line" id="L188"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">if</span><span style="color: #24292EFF"> (</span><span style="color: #D32F2F">typeof</span><span style="color: #24292EFF"> obj </span><span style="color: #D32F2F">===</span><span style="color: #24292EFF"> </span><span style="color: #22863A">&#39;object&#39;</span><span style="color: #24292EFF">) {</span></span>
-<span class="line" id="L189"><span style="color: #24292EFF">    </span><span style="color: #D32F2F">if</span><span style="color: #24292EFF"> (obj </span><span style="color: #D32F2F">===</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">null</span><span style="color: #24292EFF">) </span><span style="color: #D32F2F">return</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">null</span></span>
-<span class="line" id="L190"><span style="color: #24292EFF">    </span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">a</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">Object</span><span style="color: #6F42C1">.entries</span><span style="color: #24292EFF">(obj)</span></span>
-<span class="line" id="L191"><span style="color: #24292EFF">    </span><span style="color: #D32F2F">return</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">a</span><span style="color: #6F42C1">.sort</span><span style="color: #24292EFF">((a</span><span style="color: #212121">,</span><span style="color: #24292EFF"> b) </span><span style="color: #D32F2F">=&gt;</span><span style="color: #24292EFF"> b[</span><span style="color: #1976D2">0</span><span style="color: #24292EFF">]</span><span style="color: #6F42C1">.localeCompare</span><span style="color: #24292EFF">(a[</span><span style="color: #1976D2">0</span><span style="color: #24292EFF">]))</span></span>
-<span class="line" id="L192"><span style="color: #24292EFF">  }</span></span>
-<span class="line" id="L193"><span style="color: #24292EFF">  </span><span style="color: #C2C3C5">/* Not an object: return as is */</span></span>
-<span class="line" id="L194"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">return</span><span style="color: #24292EFF"> obj</span></span>
-<span class="line" id="L195"><span style="color: #24292EFF">}</span></span>
-<span class="line empty-line" id="L196"></span>
-<span class="line empty-line" id="L197"></span></code></pre>
+            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 180;"><span class="line" id="L180"><span style="color: #D32F2F">function</span><span style="color: #24292EFF"> </span><span style="color: #6F42C1">canonicalize</span><span style="color: #24292EFF"> (obj) {</span></span>
+<span class="line" id="L181"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">if</span><span style="color: #24292EFF"> (</span><span style="color: #D32F2F">typeof</span><span style="color: #24292EFF"> obj </span><span style="color: #D32F2F">===</span><span style="color: #24292EFF"> </span><span style="color: #22863A">&#39;object&#39;</span><span style="color: #24292EFF">) {</span></span>
+<span class="line" id="L182"><span style="color: #24292EFF">    </span><span style="color: #D32F2F">if</span><span style="color: #24292EFF"> (obj </span><span style="color: #D32F2F">===</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">null</span><span style="color: #24292EFF">) </span><span style="color: #D32F2F">return</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">null</span></span>
+<span class="line" id="L183"><span style="color: #24292EFF">    </span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">a</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">Object</span><span style="color: #6F42C1">.entries</span><span style="color: #24292EFF">(obj)</span></span>
+<span class="line" id="L184"><span style="color: #24292EFF">    </span><span style="color: #D32F2F">return</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">a</span><span style="color: #6F42C1">.sort</span><span style="color: #24292EFF">((a</span><span style="color: #212121">,</span><span style="color: #24292EFF"> b) </span><span style="color: #D32F2F">=&gt;</span><span style="color: #24292EFF"> b[</span><span style="color: #1976D2">0</span><span style="color: #24292EFF">]</span><span style="color: #6F42C1">.localeCompare</span><span style="color: #24292EFF">(a[</span><span style="color: #1976D2">0</span><span style="color: #24292EFF">]))</span></span>
+<span class="line" id="L185"><span style="color: #24292EFF">  }</span></span>
+<span class="line" id="L186"><span style="color: #24292EFF">  </span><span style="color: #C2C3C5">/* Not an object: return as is */</span></span>
+<span class="line" id="L187"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">return</span><span style="color: #24292EFF"> obj</span></span>
+<span class="line" id="L188"><span style="color: #24292EFF">}</span></span>
+<span class="line empty-line" id="L189"></span>
+<span class="line empty-line" id="L190"></span></code></pre>
           
                   
           <p>The implementation of <code>spaFetch()</code> can be broken down into several steps:</p>
@@ -382,24 +367,24 @@ return the same value regardless of the order in which the properties were defin
 <p>First of all, the hash is created, as well as the <code>now</code> variable (which will be handy later)</p>
 
           
-            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 208;"><span class="line" id="L208"><span style="color: #D32F2F">export</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #6F42C1">spaFetch</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">async</span><span style="color: #24292EFF"> (resource</span><span style="color: #212121">,</span><span style="color: #24292EFF"> init </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> {}) </span><span style="color: #D32F2F">=&gt;</span><span style="color: #24292EFF"> {</span></span>
-<span class="line" id="L209"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">hash</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #6F42C1">makeHash</span><span style="color: #24292EFF">(resource</span><span style="color: #212121">,</span><span style="color: #24292EFF"> init)</span></span>
-<span class="line" id="L210"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">now</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">Date</span><span style="color: #6F42C1">.now</span><span style="color: #24292EFF">()</span></span>
-<span class="line empty-line" id="L211"></span>
-<span class="line empty-line" id="L212"></span></code></pre>
+            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 201;"><span class="line" id="L201"><span style="color: #D32F2F">export</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #6F42C1">spaFetch</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">async</span><span style="color: #24292EFF"> (resource</span><span style="color: #212121">,</span><span style="color: #24292EFF"> init </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> {}) </span><span style="color: #D32F2F">=&gt;</span><span style="color: #24292EFF"> {</span></span>
+<span class="line" id="L202"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">hash</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #6F42C1">makeHash</span><span style="color: #24292EFF">(resource</span><span style="color: #212121">,</span><span style="color: #24292EFF"> init)</span></span>
+<span class="line" id="L203"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">now</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">Date</span><span style="color: #6F42C1">.now</span><span style="color: #24292EFF">()</span></span>
+<span class="line empty-line" id="L204"></span>
+<span class="line empty-line" id="L205"></span></code></pre>
           
                   
           <p>This maintenance cycle is run every time <code>spaFetch()</code> is called. This could be done with a
 setTimeout(), but it’s easier to do it each time to prevent build-ups.</p>
 
           
-            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 214;"><span class="line" id="L214"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">for</span><span style="color: #24292EFF"> (</span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> [</span><span style="color: #1976D2">hash</span><span style="color: #212121">,</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">value</span><span style="color: #24292EFF">] </span><span style="color: #D32F2F">of</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">spaFetch</span><span style="color: #24292EFF">.cache) {</span></span>
-<span class="line" id="L215"><span style="color: #24292EFF">    </span><span style="color: #D32F2F">if</span><span style="color: #24292EFF"> (</span><span style="color: #1976D2">value</span><span style="color: #24292EFF">.expires </span><span style="color: #D32F2F">&lt;</span><span style="color: #24292EFF"> now) {</span></span>
-<span class="line" id="L216"><span style="color: #24292EFF">      </span><span style="color: #1976D2">spaFetch</span><span style="color: #6F42C1">.</span><span style="color: #1976D2">cache</span><span style="color: #6F42C1">.delete</span><span style="color: #24292EFF">(hash)</span></span>
-<span class="line" id="L217"><span style="color: #24292EFF">    }</span></span>
-<span class="line" id="L218"><span style="color: #24292EFF">  }</span></span>
-<span class="line empty-line" id="L219"></span>
-<span class="line empty-line" id="L220"></span></code></pre>
+            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 207;"><span class="line" id="L207"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">for</span><span style="color: #24292EFF"> (</span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> [</span><span style="color: #1976D2">hash</span><span style="color: #212121">,</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">value</span><span style="color: #24292EFF">] </span><span style="color: #D32F2F">of</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">spaFetch</span><span style="color: #24292EFF">.cache) {</span></span>
+<span class="line" id="L208"><span style="color: #24292EFF">    </span><span style="color: #D32F2F">if</span><span style="color: #24292EFF"> (</span><span style="color: #1976D2">value</span><span style="color: #24292EFF">.expires </span><span style="color: #D32F2F">&lt;</span><span style="color: #24292EFF"> now) {</span></span>
+<span class="line" id="L209"><span style="color: #24292EFF">      </span><span style="color: #1976D2">spaFetch</span><span style="color: #6F42C1">.</span><span style="color: #1976D2">cache</span><span style="color: #6F42C1">.delete</span><span style="color: #24292EFF">(hash)</span></span>
+<span class="line" id="L210"><span style="color: #24292EFF">    }</span></span>
+<span class="line" id="L211"><span style="color: #24292EFF">  }</span></span>
+<span class="line empty-line" id="L212"></span>
+<span class="line empty-line" id="L213"></span></code></pre>
           
                   
           <p>If the entry is to be cached (meaning, <code>hash</code> is not empty), the code will look in the cache
@@ -423,26 +408,26 @@ one in the cache.
 Here is the code:</p>
 
           
-            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 239;"><span class="line" id="L239"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">if</span><span style="color: #24292EFF"> (hash) {</span></span>
-<span class="line" id="L240"><span style="color: #24292EFF">    </span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">cachedItem</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">spaFetch</span><span style="color: #6F42C1">.</span><span style="color: #1976D2">cache</span><span style="color: #6F42C1">.get</span><span style="color: #24292EFF">(hash)</span></span>
-<span class="line empty-line" id="L241"></span>
-<span class="line" id="L242"><span style="color: #24292EFF">    </span><span style="color: #D32F2F">if</span><span style="color: #24292EFF"> (cachedItem </span><span style="color: #D32F2F">&amp;&amp;</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">cachedItem</span><span style="color: #24292EFF">.expires </span><span style="color: #D32F2F">&gt;=</span><span style="color: #24292EFF"> now) {</span></span>
-<span class="line" id="L243"><span style="color: #24292EFF">      </span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">responsePromise</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">new</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">Promise</span><span style="color: #24292EFF">((resolve</span><span style="color: #212121">,</span><span style="color: #24292EFF"> reject) </span><span style="color: #D32F2F">=&gt;</span><span style="color: #24292EFF"> {</span></span>
-<span class="line" id="L244"><span style="color: #24292EFF">        </span><span style="color: #1976D2">cachedItem</span><span style="color: #6F42C1">.</span><span style="color: #1976D2">fetchPromise</span><span style="color: #6F42C1">.then</span><span style="color: #24292EFF">(</span></span>
-<span class="line" id="L245"><span style="color: #24292EFF">          response </span><span style="color: #D32F2F">=&gt;</span><span style="color: #24292EFF"> {</span></span>
-<span class="line" id="L246"><span style="color: #24292EFF">            </span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">responseClone</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">response</span><span style="color: #6F42C1">.clone</span><span style="color: #24292EFF">()</span></span>
-<span class="line" id="L247"><span style="color: #24292EFF">            </span><span style="color: #6F42C1">resolve</span><span style="color: #24292EFF">(responseClone)</span></span>
-<span class="line" id="L248"><span style="color: #24292EFF">          }</span><span style="color: #212121">,</span></span>
-<span class="line" id="L249"><span style="color: #24292EFF">          error </span><span style="color: #D32F2F">=&gt;</span><span style="color: #24292EFF"> {</span></span>
-<span class="line" id="L250"><span style="color: #24292EFF">            </span><span style="color: #6F42C1">reject</span><span style="color: #24292EFF">(error)</span></span>
-<span class="line" id="L251"><span style="color: #24292EFF">          }</span></span>
-<span class="line" id="L252"><span style="color: #24292EFF">        )</span></span>
-<span class="line" id="L253"><span style="color: #24292EFF">      })</span></span>
-<span class="line" id="L254"><span style="color: #24292EFF">      </span><span style="color: #D32F2F">return</span><span style="color: #24292EFF"> responsePromise</span></span>
-<span class="line" id="L255"><span style="color: #24292EFF">    }</span></span>
-<span class="line" id="L256"><span style="color: #24292EFF">  }</span></span>
-<span class="line empty-line" id="L257"></span>
-<span class="line empty-line" id="L258"></span></code></pre>
+            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 232;"><span class="line" id="L232"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">if</span><span style="color: #24292EFF"> (hash) {</span></span>
+<span class="line" id="L233"><span style="color: #24292EFF">    </span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">cachedItem</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">spaFetch</span><span style="color: #6F42C1">.</span><span style="color: #1976D2">cache</span><span style="color: #6F42C1">.get</span><span style="color: #24292EFF">(hash)</span></span>
+<span class="line empty-line" id="L234"></span>
+<span class="line" id="L235"><span style="color: #24292EFF">    </span><span style="color: #D32F2F">if</span><span style="color: #24292EFF"> (cachedItem </span><span style="color: #D32F2F">&amp;&amp;</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">cachedItem</span><span style="color: #24292EFF">.expires </span><span style="color: #D32F2F">&gt;=</span><span style="color: #24292EFF"> now) {</span></span>
+<span class="line" id="L236"><span style="color: #24292EFF">      </span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">responsePromise</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">new</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">Promise</span><span style="color: #24292EFF">((resolve</span><span style="color: #212121">,</span><span style="color: #24292EFF"> reject) </span><span style="color: #D32F2F">=&gt;</span><span style="color: #24292EFF"> {</span></span>
+<span class="line" id="L237"><span style="color: #24292EFF">        </span><span style="color: #1976D2">cachedItem</span><span style="color: #6F42C1">.</span><span style="color: #1976D2">fetchPromise</span><span style="color: #6F42C1">.then</span><span style="color: #24292EFF">(</span></span>
+<span class="line" id="L238"><span style="color: #24292EFF">          response </span><span style="color: #D32F2F">=&gt;</span><span style="color: #24292EFF"> {</span></span>
+<span class="line" id="L239"><span style="color: #24292EFF">            </span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">responseClone</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">response</span><span style="color: #6F42C1">.clone</span><span style="color: #24292EFF">()</span></span>
+<span class="line" id="L240"><span style="color: #24292EFF">            </span><span style="color: #6F42C1">resolve</span><span style="color: #24292EFF">(responseClone)</span></span>
+<span class="line" id="L241"><span style="color: #24292EFF">          }</span><span style="color: #212121">,</span></span>
+<span class="line" id="L242"><span style="color: #24292EFF">          error </span><span style="color: #D32F2F">=&gt;</span><span style="color: #24292EFF"> {</span></span>
+<span class="line" id="L243"><span style="color: #24292EFF">            </span><span style="color: #6F42C1">reject</span><span style="color: #24292EFF">(error)</span></span>
+<span class="line" id="L244"><span style="color: #24292EFF">          }</span></span>
+<span class="line" id="L245"><span style="color: #24292EFF">        )</span></span>
+<span class="line" id="L246"><span style="color: #24292EFF">      })</span></span>
+<span class="line" id="L247"><span style="color: #24292EFF">      </span><span style="color: #D32F2F">return</span><span style="color: #24292EFF"> responsePromise</span></span>
+<span class="line" id="L248"><span style="color: #24292EFF">    }</span></span>
+<span class="line" id="L249"><span style="color: #24292EFF">  }</span></span>
+<span class="line empty-line" id="L250"></span>
+<span class="line empty-line" id="L251"></span></code></pre>
           
                   
           <p>If the call gets to this stage, it means that it <em>wasn’t</em> in the cache. This means that it will need
@@ -451,24 +436,24 @@ to be called.</p>
 will be expected to return a fetch() promise)</p>
 
           
-            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 263;"><span class="line" id="L263"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">let</span><span style="color: #24292EFF"> fetchPromise</span></span>
-<span class="line" id="L264"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">if</span><span style="color: #24292EFF"> (</span><span style="color: #1976D2">config</span><span style="color: #24292EFF">.fetcher) {</span></span>
-<span class="line" id="L265"><span style="color: #24292EFF">    fetchPromise </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">config</span><span style="color: #6F42C1">.fetcher</span><span style="color: #24292EFF">(resource</span><span style="color: #212121">,</span><span style="color: #24292EFF"> init)</span></span>
-<span class="line" id="L266"><span style="color: #24292EFF">  } </span><span style="color: #D32F2F">else</span><span style="color: #24292EFF"> {</span></span>
-<span class="line" id="L267"><span style="color: #24292EFF">    fetchPromise </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #6F42C1">fetch</span><span style="color: #24292EFF">(resource</span><span style="color: #212121">,</span><span style="color: #24292EFF"> init)</span></span>
-<span class="line" id="L268"><span style="color: #24292EFF">  }</span></span>
-<span class="line empty-line" id="L269"></span>
-<span class="line empty-line" id="L270"></span></code></pre>
+            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 256;"><span class="line" id="L256"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">let</span><span style="color: #24292EFF"> fetchPromise</span></span>
+<span class="line" id="L257"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">if</span><span style="color: #24292EFF"> (</span><span style="color: #1976D2">config</span><span style="color: #24292EFF">.fetcher) {</span></span>
+<span class="line" id="L258"><span style="color: #24292EFF">    fetchPromise </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">config</span><span style="color: #6F42C1">.fetcher</span><span style="color: #24292EFF">(resource</span><span style="color: #212121">,</span><span style="color: #24292EFF"> init)</span></span>
+<span class="line" id="L259"><span style="color: #24292EFF">  } </span><span style="color: #D32F2F">else</span><span style="color: #24292EFF"> {</span></span>
+<span class="line" id="L260"><span style="color: #24292EFF">    fetchPromise </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #6F42C1">fetch</span><span style="color: #24292EFF">(resource</span><span style="color: #212121">,</span><span style="color: #24292EFF"> init)</span></span>
+<span class="line" id="L261"><span style="color: #24292EFF">  }</span></span>
+<span class="line empty-line" id="L262"></span>
+<span class="line empty-line" id="L263"></span></code></pre>
           
                   
           <p>If the item is to be cached (see: <code>hash</code> is not empty), it will do so:</p>
 
           
-            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 271;"><span class="line" id="L271"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">if</span><span style="color: #24292EFF"> (hash) {</span></span>
-<span class="line" id="L272"><span style="color: #24292EFF">    </span><span style="color: #1976D2">spaFetch</span><span style="color: #6F42C1">.</span><span style="color: #1976D2">cache</span><span style="color: #6F42C1">.set</span><span style="color: #24292EFF">(hash</span><span style="color: #212121">,</span><span style="color: #24292EFF"> { fetchPromise</span><span style="color: #212121">,</span><span style="color: #24292EFF"> expires</span><span style="color: #D32F2F">:</span><span style="color: #24292EFF"> now </span><span style="color: #D32F2F">+</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">config</span><span style="color: #24292EFF">.cacheDuration })</span></span>
-<span class="line" id="L273"><span style="color: #24292EFF">  }</span></span>
-<span class="line empty-line" id="L274"></span>
-<span class="line empty-line" id="L275"></span></code></pre>
+            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 264;"><span class="line" id="L264"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">if</span><span style="color: #24292EFF"> (hash) {</span></span>
+<span class="line" id="L265"><span style="color: #24292EFF">    </span><span style="color: #1976D2">spaFetch</span><span style="color: #6F42C1">.</span><span style="color: #1976D2">cache</span><span style="color: #6F42C1">.set</span><span style="color: #24292EFF">(hash</span><span style="color: #212121">,</span><span style="color: #24292EFF"> { fetchPromise</span><span style="color: #212121">,</span><span style="color: #24292EFF"> expires</span><span style="color: #D32F2F">:</span><span style="color: #24292EFF"> now </span><span style="color: #D32F2F">+</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">config</span><span style="color: #24292EFF">.cacheDuration })</span></span>
+<span class="line" id="L266"><span style="color: #24292EFF">  }</span></span>
+<span class="line empty-line" id="L267"></span>
+<span class="line empty-line" id="L268"></span></code></pre>
           
                   
           <p>Even if the cache was empty, it’s still <em>paramount</em> to return a proxy promise (as explained above) rather than
@@ -476,28 +461,28 @@ the original <code>fetch()</code> promise, in order to prevent the case where <c
 value is rendered useless.</p>
 
           
-            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 278;"><span class="line" id="L278"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">return</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">new</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">Promise</span><span style="color: #24292EFF">((resolve</span><span style="color: #212121">,</span><span style="color: #24292EFF"> reject) </span><span style="color: #D32F2F">=&gt;</span><span style="color: #24292EFF"> {</span></span>
-<span class="line" id="L279"><span style="color: #24292EFF">    </span><span style="color: #1976D2">fetchPromise</span><span style="color: #6F42C1">.then</span><span style="color: #24292EFF">(</span></span>
-<span class="line" id="L280"><span style="color: #24292EFF">      response </span><span style="color: #D32F2F">=&gt;</span><span style="color: #24292EFF"> {</span></span>
-<span class="line" id="L281"><span style="color: #24292EFF">        </span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">responseClone</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">response</span><span style="color: #6F42C1">.clone</span><span style="color: #24292EFF">()</span></span>
-<span class="line" id="L282"><span style="color: #24292EFF">        </span><span style="color: #6F42C1">resolve</span><span style="color: #24292EFF">(responseClone)</span></span>
-<span class="line" id="L283"><span style="color: #24292EFF">      }</span><span style="color: #212121">,</span></span>
-<span class="line" id="L284"><span style="color: #24292EFF">      error </span><span style="color: #D32F2F">=&gt;</span><span style="color: #24292EFF"> {</span></span>
-<span class="line" id="L285"><span style="color: #24292EFF">        </span><span style="color: #6F42C1">reject</span><span style="color: #24292EFF">(error)</span></span>
-<span class="line" id="L286"><span style="color: #24292EFF">      }</span></span>
-<span class="line" id="L287"><span style="color: #24292EFF">    )</span></span>
-<span class="line" id="L288"><span style="color: #24292EFF">  })</span></span>
-<span class="line" id="L289"><span style="color: #24292EFF">}</span></span>
-<span class="line empty-line" id="L290"></span>
-<span class="line empty-line" id="L291"></span></code></pre>
+            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 271;"><span class="line" id="L271"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">return</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">new</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">Promise</span><span style="color: #24292EFF">((resolve</span><span style="color: #212121">,</span><span style="color: #24292EFF"> reject) </span><span style="color: #D32F2F">=&gt;</span><span style="color: #24292EFF"> {</span></span>
+<span class="line" id="L272"><span style="color: #24292EFF">    </span><span style="color: #1976D2">fetchPromise</span><span style="color: #6F42C1">.then</span><span style="color: #24292EFF">(</span></span>
+<span class="line" id="L273"><span style="color: #24292EFF">      response </span><span style="color: #D32F2F">=&gt;</span><span style="color: #24292EFF"> {</span></span>
+<span class="line" id="L274"><span style="color: #24292EFF">        </span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">responseClone</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">response</span><span style="color: #6F42C1">.clone</span><span style="color: #24292EFF">()</span></span>
+<span class="line" id="L275"><span style="color: #24292EFF">        </span><span style="color: #6F42C1">resolve</span><span style="color: #24292EFF">(responseClone)</span></span>
+<span class="line" id="L276"><span style="color: #24292EFF">      }</span><span style="color: #212121">,</span></span>
+<span class="line" id="L277"><span style="color: #24292EFF">      error </span><span style="color: #D32F2F">=&gt;</span><span style="color: #24292EFF"> {</span></span>
+<span class="line" id="L278"><span style="color: #24292EFF">        </span><span style="color: #6F42C1">reject</span><span style="color: #24292EFF">(error)</span></span>
+<span class="line" id="L279"><span style="color: #24292EFF">      }</span></span>
+<span class="line" id="L280"><span style="color: #24292EFF">    )</span></span>
+<span class="line" id="L281"><span style="color: #24292EFF">  })</span></span>
+<span class="line" id="L282"><span style="color: #24292EFF">}</span></span>
+<span class="line empty-line" id="L283"></span>
+<span class="line empty-line" id="L284"></span></code></pre>
           
                   
           <p>The cache is a property of the <code>spaFetch()</code> function. This helps with testing</p>
 
           
-            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 292;"><span class="line" id="L292"><span style="color: #1976D2">spaFetch</span><span style="color: #24292EFF">.cache </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">new</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">Map</span><span style="color: #24292EFF">()</span></span>
-<span class="line empty-line" id="L293"></span>
-<span class="line empty-line" id="L294"></span></code></pre>
+            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 285;"><span class="line" id="L285"><span style="color: #1976D2">spaFetch</span><span style="color: #24292EFF">.cache </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">new</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">Map</span><span style="color: #24292EFF">()</span></span>
+<span class="line empty-line" id="L286"></span>
+<span class="line empty-line" id="L287"></span></code></pre>
           
                   
           <h1 id="conclusions">Conclusions</h1>
@@ -509,6 +494,8 @@ value is rendered useless.</p>
 that worked <em>exactly</em> like <code>fetch()</code>, although only one actual call was made.</p>
 <p>The end result is something that can facilitate the creation of decoupled components which might end up making
 the exact same network request at the same time.</p>
+<p>Note: there is a <a href="https://codereview.stackexchange.com/questions/274119/configuration-of-an-es6-module-that-provides-a-fetch-temporary-cache">code review</a>
+happening. Also, this module is the result of <a href="https://stackoverflow.com/questions/70342607/global-memoizing-fetch-to-prevent-multiple-of-the-same-request">this StackOverflow question</a></p>
 
           
         

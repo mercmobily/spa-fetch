@@ -1,6 +1,6 @@
 . ../node_modules/web-sites-common/makeDocsBase.sh
 
-cp ../index.js literate-code.js 
+cp ../spa-fetch.js literate-code.js 
 ../node_modules/docco-next/bin/docco \
   -p ../node_modules/web-sites-common/plugin.js\
   -c ../node_modules/web-sites-common/template.css\
