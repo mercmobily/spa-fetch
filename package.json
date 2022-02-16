@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Tony Mobily",
-  "license": "ISC",
+  "license": "gpl-3.0",
   "devDdependencies": {
     "express": "^4.17.1",
     "jsonreststores": "^2.0.12",
@@ -27,5 +27,9 @@
     "eslint-plugin-node": "^10.0.0",
     "eslint-plugin-promise": "^4.3.1",
     "eslint-plugin-standard": "^4.1.0"
+  },
+  "dependencies": {
+    "docco": "^0.9.1",
+    "docco-next": "^0.9.10"
   }
 }
