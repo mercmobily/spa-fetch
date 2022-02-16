@@ -1,10 +1,3 @@
-/* TODO
-  Make code literate
-  Make decent web site
-*/
-
-// https://codereview.stackexchange.com/questions/274119/configuration-of-an-es6-module-that-provides-a-fetch-temporary-cache
-
 // # Spa-fetch
 // ## avoid repeated identical fetch() calls in a short amount of time
 //
@@ -299,3 +292,6 @@ spaFetch.cache = new Map()
 //
 // The end result is something that can facilitate the creation of decoupled components which might end up making
 // the exact same network request at the same time.
+//
+// Note: there is a [code review](https://codereview.stackexchange.com/questions/274119/configuration-of-an-es6-module-that-provides-a-fetch-temporary-cache)
+// happening. Also, this module is the result of [this StackOverflow question](https://stackoverflow.com/questions/70342607/global-memoizing-fetch-to-prevent-multiple-of-the-same-request)

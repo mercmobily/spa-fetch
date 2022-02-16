@@ -1,4 +1,4 @@
-import { spaFetch, spaFetchConfig } from '../../index.js'
+import { spaFetch, spaFetchConfig } from '../../spa-fetch.js'
 
 /* global describe, it, expect */
 
