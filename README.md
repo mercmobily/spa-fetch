@@ -19,7 +19,7 @@ await function () {
 }
 ````
 
-Note that if you make the same call twice within 1 second, the server will only he hit _once_. However, the data will be available for each call:
+Note that if you make the same HTTP GET call twice within 1 second, the server will only he hit _once_. However, the data will be available for each call:
 
 
 ````
@@ -38,6 +38,8 @@ await function () {
   console.log(data2)
 }
 ````
+
+Caching will happen regardless of how `spaFetch()` is called: using a text URL or a `Request` object as first parameter, and whether `init` is passed as its second parameter. If two HTTP GET calls are equivalent, they will be cached.
 
 ## Configuring the module
 

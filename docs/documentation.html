@@ -125,7 +125,7 @@
 <span class="line"><span style="color: #24292EFF">  console.log(data)</span></span>
 <span class="line"><span style="color: #24292EFF">}</span></span></code></pre>
 </code></pre>
-<p>Note that if you make the same call twice within 1 second, the server will only he hit <em>once</em>. However, the data will be available for each call:</p>
+<p>Note that if you make the same HTTP GET call twice within 1 second, the server will only he hit <em>once</em>. However, the data will be available for each call:</p>
 <pre><code><pre class="shiki" style="background-color: transparent"><code ><span class="line"><span style="color: #24292EFF">import { spaFetch } from &#39;@spa-fetch&#39;</span></span>
 <span class="line empty-line"></span>
 <span class="line"><span style="color: #24292EFF">...</span></span>
@@ -141,6 +141,7 @@
 <span class="line"><span style="color: #24292EFF">  console.log(data2)</span></span>
 <span class="line"><span style="color: #24292EFF">}</span></span></code></pre>
 </code></pre>
+<p>Caching will happen regardless of how <code>spaFetch()</code> is called: using a text URL or a <code>Request</code> object as first parameter, and whether <code>init</code> is passed as its second parameter. If two HTTP GET calls are equivalent, they will be cached.</p>
 <h2 id="configuring-the-module">Configuring the module</h2>
 
           
