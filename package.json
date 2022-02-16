@@ -1,6 +1,6 @@
 {
   "name": "spa-fetch",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Global fetch for Single Page Applications",
   "main": "spa-fetch.js",
   "scripts": {
