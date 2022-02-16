@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+<head>
+  <title>literate-code.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <link rel="stylesheet" media="all" href="template.css" />
+  <link rel="stylesheet" media="all" href="normalize.css" />
+  <link rel="stylesheet" media="all" href="extra.css" />
+
+  <script type="module" src="/lib/material-esm.js"></script>
+  <script type="module" src="/lib/tpe-esm.js"></script>
+
+  
+
+
+</head>
+<body>
+  <ee-header id="header" class="header" >
+    <div slot="header-title" style="display: flex;">
+      <div id="logo" alt="TPE"></div>
+      <h3 class="page-title" >literate-code.js</h3>
+    </div>
+    
+      <nav class="header-menu" slot="actions" role="navigation">
+        <ul>
+          
+            
+            
+              <li>
+                  <a class="source " href="index.html">
+                      home
+                  </a>
+              </li>
+            
+          
+            
+            
+              <li>
+                  <a class="source " href="documentation.html">
+                      documentation
+                  </a>
+              </li>
+            
+          
+            
+            
+              <li>
+                  <a class="source " href="codelabs.html">
+                      codelabs
+                  </a>
+              </li>
+            
+          
+            
+            
+          
+            
+            
+              <li>
+                  <a class="source  current " href="literate-code.html">
+                      literate code
+                  </a>
+              </li>
+            
+          
+        </ul>
+      </nav>
+    
+    <div class="links" slot="actions">
+      <a href="https://github.com/mobily-enterprises/tpe" target="_blank" title="View on GitHub">
+        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <title>GitHub icon</title>
+          <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+        </svg>
+      </a>
+    </div>
+  </ee-header>
+  <main role="main">
+    
+    
+
+      <nav class="toc" role="navigation">
+        <ul>
+          
+            
+            
+              <li>
+                <a class="source " href="index.html">
+                    home
+                </a>
+              </li>
+          
+            
+            
+              <li>
+                <a class="source " href="documentation.html">
+                    documentation
+                </a>
+              </li>
+          
+            
+            
+              <li>
+                <a class="source " href="codelabs.html">
+                    codelabs
+                </a>
+              </li>
+          
+            
+            
+              <li>
+                <a class="source  indented " href="codelabs/how-to/index.html">
+                    codelabs &#8627; how to
+                </a>
+              </li>
+          
+            
+            
+              <li>
+                <a class="source  current " href="literate-code.html">
+                    literate code
+                </a>
+              </li>
+          
+        </ul>
+      </nav>
+    
+
+    <section class="content-page">
+
+      
+      
+        <article class="literate-code.js">
+      
+                  
+          
+          
+            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 1;"><span class="line" id="L1"><span style="color: #C2C3C5">/* TODO</span></span>
+<span class="line" id="L2"><span style="color: #C2C3C5">  Make code literate</span></span>
+<span class="line" id="L3"><span style="color: #C2C3C5">  Make decent web site</span></span>
+<span class="line" id="L4"><span style="color: #C2C3C5">*/</span></span>
+<span class="line empty-line" id="L5"></span>
+<span class="line empty-line" id="L6"></span></code></pre>
+          
+                  
+          <p><a href="https://codereview.stackexchange.com/questions/274119/configuration-of-an-es6-module-that-provides-a-fetch-temporary-cache">https://codereview.stackexchange.com/questions/274119/configuration-of-an-es6-module-that-provides-a-fetch-temporary-cache</a></p>
+<h1 id="spa-fetch">Spa-fetch</h1>
+
+          
+                  
+          <h2 id="avoid-repeated-identical-fetch-calls-in-a-short-amount-of-time">avoid repeated identical fetch() calls in a short amount of time</h2>
+
+          
+                  
+          <p>spa-fetch is a wrapper to Javascript’s native <code>fetch()</code> call which will prevent multiple fetch() <strong>GET</strong> calls being made
+against the same URL in a short amount of time.</p>
+<p>It also provides hooks which will allow specific code to be run before and after each fetch call.</p>
+<h2 id="use-cases">Use cases</h2>
+
+          
+                  
+          <p>You may have a SPA (Single Page Application) made up of fully decoupled components that use the browser
+location to load data. If two decoupled components are nested location-wise (e.g. one is <code>/users/:userId</code> and the other one
+is <code>/users/:userId/address/:addressId</code>), they may both attempt to make a request for <code>/users/10</code> (assuming that <code>userId</code> is 10)
+within a short amount of time.</p>
+<p>You may have an application that in which the user can trigger an HTTP GET call via UI, and want to make sure that each call
+behaves as if the server had responded, without overwhelming the server with requests.</p>
+<p>You may have an SPA and want to centralise the UI response for specific fetch errors. For example a 401 could trigger a
+dialog to re-login.</p>
+<h2 id="configuring-the-function">Configuring the function</h2>
+
+          
+                  
+          <p>spa-fetch can be configured by simply changing the exported object spaFetchConfig, defined like so:</p>
+
+          
+            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 33;"><span class="line" id="L33"><span style="color: #D32F2F">export</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">spaFetchConfig</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> {</span></span>
+<span class="line" id="L34"><span style="color: #24292EFF">  cacheDuration</span><span style="color: #D32F2F">:</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">1000</span><span style="color: #212121">,</span></span>
+<span class="line" id="L35"><span style="color: #24292EFF">  fetcher</span><span style="color: #D32F2F">:</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">null</span></span>
+<span class="line" id="L36"><span style="color: #24292EFF">}</span></span>
+<span class="line" id="L37"><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">config</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> spaFetchConfig</span></span>
+<span class="line empty-line" id="L38"></span>
+<span class="line empty-line" id="L39"></span></code></pre>
+          
+                  
+          <h2 id="creating-a-unique-string-out-of-fetchs-parameters">Creating a unique string out of <code>fetch()</code>‘s parameters</h2>
+
+          
+                  
+          <p>One of the main goals of this module is to cache HTTP GET requests. Therefore, the module must be able to tell whether two
+<code>fetch()</code> calls were made with the same parameters.</p>
+<p>This is normally achieved by creating a unique hash based on the passed parameters – matching hashes will imply matching
+requests.</p>
+<p>Unfortunately, there is a considerable level of complication since <code>fetch()</code> can effectively be used in three
+different ways, each one requiring a different way of creating the hash.</p>
+<p>Consider that the parameters are <code>resource</code> and <code>init</code>, the parameters can be defined in three ways:</p>
+<ul>
+<li><p><code>resource</code> is a URL string, and <code>init</code> is an object with specific properties. In this case, the browser will create a <code>Request</code>
+object internally, based on the passed URL string and the <code>init</code> parameters. The parameters required by <code>Request</code>‘s constructor
+match the ones in <code>fetch()</code>. This means that the browser, behind the scenes, will simply call <code>new Request(resource, init)</code> if
+<code>resource</code> is an URL string. In terms of creating the hash, this is the simplest case.</p>
+</li>
+<li><p><code>resource</code> is a <code>Request</code> object. In this case, the browser will have no need to create a <code>Request</code> object, since the developer
+has one already created. In terms of creating the hash, this is a very difficult scenario since serialising a <code>Request</code> object needs
+to be done knowing exactly which properties are important. Things are complicated by the fact that the properties <code>body</code> and <code>headers</code>
+are special cases (<code>body</code> is exposed as a stream, and <code>headers</code> is a Map).</p>
+</li>
+<li><p><code>resource</code> is a <code>Request</code> object, and <code>init</code> is an object. In this case, the browser will somehow create a new Request object using
+<code>resource</code> as a starting point, but with the properties in <code>init</code> applied to it too. This means that the Request object <code>resource</code> might
+have the <code>cache</code> property set as default. However, since <code>init</code> contains <code>{ cache: &#39;no-cache&#39; }</code>, the final Request object will actually
+have <code>no-cache</code> set for the <code>cache</code> property – basically, the <code>init</code> object has the last say.</p>
+</li>
+</ul>
+<p>The hashing needs to work reliably for two requests with identical parameters even in cases where those parameters are
+set using different patterns seen above. For example, the hashes need to match for these two requests:</p>
+<p>   // <code>resource</code> is a URL string, and <code>init</code> is an object
+   const res1 = await spaFetch(‘<a href="http://www.google.com&#39;">http://www.google.com&#39;</a>, { cache: ‘reload’, headers: { ‘x-something’: 10 } })</p>
+<p>   // <code>resource</code> is a Request object created with cache as <code>reload</code>, and then
+   // spaFetch called with <code>init</code> where cache is <code>reload</code>
+   const request2 = new Request(‘<a href="http://www.google.com&#39;">http://www.google.com&#39;</a>, { cache: ‘no-cache’, headers: { ‘x-something’: 10 }})
+   const res2 = await spaFetch(request2, { cache: ‘reload’})</p>
+<p>This is an extreme example, but it shows how <code>request2</code>‘s property for <code>cache</code> is then overridden by the
+<code>prop</code> variable passed to <code>spaFetch</code>.</p>
+<p>The best way to have reliable comparisons is to always create a Request object (even when <code>spaFetch()</code> is called with <code>resource</code> being
+a URL string), and comparing the relevant properties from the newly created Request object.</p>
+<p>This is done in two blocks of code; they both aim at creating two variables <code>finalInit</code> and <code>finalUrl</code> which
+will be used to create the hash.</p>
+<p>Here is how it works:</p>
+
+          
+            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 89;"><span class="line" id="L89"><span style="color: #D32F2F">function</span><span style="color: #24292EFF"> </span><span style="color: #6F42C1">makeHash</span><span style="color: #24292EFF"> (resource</span><span style="color: #212121">,</span><span style="color: #24292EFF"> init) {</span></span>
+<span class="line empty-line" id="L90"></span></code></pre>
+          
+                  
+          
+          
+            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 91;"><span class="line" id="L91"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">finalInit</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> {}</span></span>
+<span class="line" id="L92"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">let</span><span style="color: #24292EFF"> finalUrl </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #22863A">&#39;&#39;</span></span>
+<span class="line" id="L93"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">let</span><span style="color: #24292EFF"> finalRequest</span></span>
+<span class="line empty-line" id="L94"></span>
+<span class="line" id="L95"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">allowedInitProperties</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> [</span><span style="color: #22863A">&#39;method&#39;</span><span style="color: #212121">,</span><span style="color: #24292EFF"> </span><span style="color: #22863A">&#39;mode&#39;</span><span style="color: #212121">,</span><span style="color: #24292EFF"> </span><span style="color: #22863A">&#39;credentials&#39;</span><span style="color: #212121">,</span><span style="color: #24292EFF"> </span><span style="color: #22863A">&#39;cache&#39;</span><span style="color: #212121">,</span><span style="color: #24292EFF"> </span><span style="color: #22863A">&#39;redirect&#39;</span><span style="color: #212121">,</span><span style="color: #24292EFF"> </span><span style="color: #22863A">&#39;referrer&#39;</span><span style="color: #212121">,</span><span style="color: #24292EFF"> </span><span style="color: #22863A">&#39;integrity&#39;</span><span style="color: #212121">,</span><span style="color: #24292EFF"> </span><span style="color: #22863A">&#39;headers&#39;</span><span style="color: #24292EFF">]</span></span>
+<span class="line empty-line" id="L96"></span>
+<span class="line empty-line" id="L97"></span></code></pre>
+          
+                  
+          <p>This is the full list of properties which make a request unique. Note that <code>body</code> is missing, since <code>spaFetch()</code> will only
+ever cache <code>GET</code> requests. (Luckily so: <code>body</code> is also defined as a stream in a Request object, and it would me difficult to
+serialise).</p>
+<p>The first case considered is where the <code>resource</code> parameter is a URL string, rather than a Request:</p>
+<h2 id="first-parameter-is-a-url">FIRST PARAMETER IS A URL!</h2>
+
+          
+                  
+          
+          
+            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 105;"><span class="line" id="L105"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">if</span><span style="color: #24292EFF"> (</span><span style="color: #D32F2F">!</span><span style="color: #24292EFF">(resource </span><span style="color: #D32F2F">instanceof</span><span style="color: #24292EFF"> </span><span style="color: #6F42C1">Request</span><span style="color: #24292EFF">)) {</span></span>
+<span class="line" id="L106"><span style="color: #24292EFF">    finalRequest </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">new</span><span style="color: #24292EFF"> </span><span style="color: #6F42C1">Request</span><span style="color: #24292EFF">(resource</span><span style="color: #212121">,</span><span style="color: #24292EFF"> init)</span></span>
+<span class="line" id="L107"><span style="color: #24292EFF">    </span><span style="color: #D32F2F">for</span><span style="color: #24292EFF"> (</span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">prop</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">of</span><span style="color: #24292EFF"> allowedInitProperties) finalInit[prop] </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> finalRequest[prop]</span></span>
+<span class="line" id="L108"><span style="color: #24292EFF">    finalUrl </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">finalRequest</span><span style="color: #24292EFF">.url</span></span>
+<span class="line empty-line" id="L109"></span>
+<span class="line empty-line" id="L110"></span></code></pre>
+          
+                  
+          <p>This is the simple case. A new request is created, based on the <code>resource</code> (which is a URL string) and the <code>init</code> object.
+While this may seem wasteful, it will ensure that any kind of property normalisation carried out by the Request constuctor
+doesn’t affect comparison.
+So, first a new request is created (in <code>finalRequest</code>). Then finalInit is created, by talking all of the allowed init
+properties over from the newly created <code>Request</code>. Finally, finalUrl is set, taken from the <code>url</code> property of the newly
+created request (<code>finalRequest.url</code>).</p>
+<p>A much more involved process is needed in case the <code>resource</code> parameter if an instance of Request:</p>
+
+          
+            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 119;"><span class="line" id="L119"><span style="color: #24292EFF">    </span><span style="color: #C2C3C5">/* FIRST PARAMETER IS A REQUEST! */</span></span>
+<span class="line" id="L120"><span style="color: #24292EFF">    </span><span style="color: #C2C3C5">/* ----------------------------- */</span></span>
+<span class="line" id="L121"><span style="color: #24292EFF">    </span><span style="color: #C2C3C5">/* It will make up a request with the same passed parameters, and will */</span></span>
+<span class="line" id="L122"><span style="color: #24292EFF">    </span><span style="color: #C2C3C5">/* make up finalInit with the corresponding properties                 */</span></span>
+<span class="line" id="L123"><span style="color: #24292EFF">  } </span><span style="color: #D32F2F">else</span><span style="color: #24292EFF"> {</span></span>
+<span class="line" id="L124"><span style="color: #24292EFF">    </span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">originalRequest</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> resource</span></span>
+<span class="line" id="L125"><span style="color: #24292EFF">    </span><span style="color: #C2C3C5">/* If an init is specified, then make a new request with a mix of */</span></span>
+<span class="line" id="L126"><span style="color: #24292EFF">    </span><span style="color: #C2C3C5">/* the values from the original request, AND the extra init ones  */</span></span>
+<span class="line" id="L127"><span style="color: #24292EFF">    </span><span style="color: #D32F2F">if</span><span style="color: #24292EFF"> (</span><span style="color: #D32F2F">!</span><span style="color: #24292EFF">init) {</span></span>
+<span class="line" id="L128"><span style="color: #24292EFF">      finalRequest </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> resource</span></span>
+<span class="line" id="L129"><span style="color: #24292EFF">      </span><span style="color: #D32F2F">for</span><span style="color: #24292EFF"> (</span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">prop</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">of</span><span style="color: #24292EFF"> allowedInitProperties) finalInit[prop] </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> originalRequest[prop]</span></span>
+<span class="line" id="L130"><span style="color: #24292EFF">      finalUrl </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">finalRequest</span><span style="color: #24292EFF">.url</span></span>
+<span class="line" id="L131"><span style="color: #24292EFF">    } </span><span style="color: #D32F2F">else</span><span style="color: #24292EFF"> {</span></span>
+<span class="line" id="L132"><span style="color: #24292EFF">      </span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">originalRequestInit</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> {}</span></span>
+<span class="line" id="L133"><span style="color: #24292EFF">      </span><span style="color: #D32F2F">for</span><span style="color: #24292EFF"> (</span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">prop</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">of</span><span style="color: #24292EFF"> allowedInitProperties) originalRequestInit[prop] </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> originalRequest[prop]</span></span>
+<span class="line" id="L134"><span style="color: #24292EFF">      finalRequest </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">new</span><span style="color: #24292EFF"> </span><span style="color: #6F42C1">Request</span><span style="color: #24292EFF">(</span><span style="color: #1976D2">originalRequest</span><span style="color: #24292EFF">.url</span><span style="color: #212121">,</span><span style="color: #24292EFF"> { </span><span style="color: #D32F2F">...</span><span style="color: #24292EFF">originalRequestInit</span><span style="color: #212121">,</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">...</span><span style="color: #24292EFF">init })</span></span>
+<span class="line" id="L135"><span style="color: #24292EFF">      </span><span style="color: #D32F2F">for</span><span style="color: #24292EFF"> (</span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">prop</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">of</span><span style="color: #24292EFF"> allowedInitProperties) finalInit[prop] </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> finalRequest[prop]</span></span>
+<span class="line" id="L136"><span style="color: #24292EFF">      finalUrl </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">originalRequest</span><span style="color: #24292EFF">.url</span></span>
+<span class="line" id="L137"><span style="color: #24292EFF">    }</span></span>
+<span class="line" id="L138"><span style="color: #24292EFF">  }</span></span>
+<span class="line empty-line" id="L139"></span>
+<span class="line empty-line" id="L140"></span></code></pre>
+          
+                  
+          <p>In this case, there are two distinct possibilities: one where the <code>init</code> object is passed, and one where it’s not.</p>
+<p>The first case is the easy one: the code is identical to the previous case, with the exception that the <code>Request</code> object
+doesn’t need to be created (since it was passed).</p>
+<p>The second case, where <code>init</code> was passed, is much more involved. The passed <code>Request</code> does <em>not</em> have all of the properties
+needed, since there is a second <code>init</code> parameter that will affect those properties.
+The solution is to first create an <code>originalRequestInit</code> based on the original, passed <code>Request</code> object; then, another request
+called <code>finalRequest</code> is created, using the URL parameter from the original request, and – as properties – using the
+original <code>originalRequestInit</code> object mixed with the passed <code>init</code> object
+(That is, <code>new Request(originalRequest.url, { ...originalRequestInit, ...init })</code>). Finally, the <code>finalInit</code> variable is created
+based on the important properties of <em>that</em> newly created request.</p>
+<p>The browser is likely to do something very similar when is passed a <code>Request</code> object <em>and</em> and <code>init</code> object to the <code>fetch()</code> function.</p>
+<p>At this stage, the two crucial variables <code>finalInit</code> and <code>finalUrl</code> are set.
+First of all, if the method is different to <code>GET</code> (in capital letters, as it was normalised by the browser itself), then the function
+will return an empty string. This will mean ‘no caching’:</p>
+
+          
+            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 159;"><span class="line" id="L159"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">if</span><span style="color: #24292EFF"> (</span><span style="color: #1976D2">finalInit</span><span style="color: #24292EFF">.method </span><span style="color: #D32F2F">!==</span><span style="color: #24292EFF"> </span><span style="color: #22863A">&#39;GET&#39;</span><span style="color: #24292EFF">) </span><span style="color: #D32F2F">return</span><span style="color: #24292EFF"> </span><span style="color: #22863A">&#39;&#39;</span></span>
+<span class="line empty-line" id="L160"></span>
+<span class="line empty-line" id="L161"></span></code></pre>
+          
+                  
+          <p>Also, any empty value is filtered out of <code>finalInit</code>:</p>
+
+          
+            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 163;"><span class="line" id="L163"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">for</span><span style="color: #24292EFF"> (</span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">k</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">in</span><span style="color: #24292EFF"> finalInit) {</span></span>
+<span class="line" id="L164"><span style="color: #24292EFF">    </span><span style="color: #D32F2F">if</span><span style="color: #24292EFF"> (</span><span style="color: #D32F2F">typeof</span><span style="color: #24292EFF"> finalInit[k] </span><span style="color: #D32F2F">===</span><span style="color: #24292EFF"> </span><span style="color: #22863A">&#39;undefined&#39;</span><span style="color: #24292EFF">) </span><span style="color: #D32F2F">delete</span><span style="color: #24292EFF"> finalInit[k]</span></span>
+<span class="line" id="L165"><span style="color: #24292EFF">  }</span></span>
+<span class="line empty-line" id="L166"></span>
+<span class="line empty-line" id="L167"></span></code></pre>
+          
+                  
+          <p>This is the function’s home stretch. There is yet one last gotcha: the <code>headers</code> property behaves like a map, rather than like
+an object or an array. That <code>Object.fromEntries()</code> will ensure that it’s converted into an object before running <code>canonicalize()</code> on it:</p>
+
+          
+            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 170;"><span class="line" id="L170"><span style="color: #24292EFF">  </span><span style="color: #1976D2">finalInit</span><span style="color: #24292EFF">.headers </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #6F42C1">canonicalize</span><span style="color: #24292EFF">(</span><span style="color: #1976D2">Object</span><span style="color: #6F42C1">.fromEntries</span><span style="color: #24292EFF">(</span><span style="color: #1976D2">finalInit</span><span style="color: #24292EFF">.headers))</span></span>
+<span class="line" id="L171"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">items</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #6F42C1">canonicalize</span><span style="color: #24292EFF">(finalInit)</span></span>
+<span class="line empty-line" id="L172"></span>
+<span class="line empty-line" id="L173"></span></code></pre>
+          
+                  
+          <p>Thanks to <code>canonicalize()</code> (explained in the next paragraph), the <code>items</code> variable is an array. The last step is to add the URL to it,
+and return the <code>stringify()</code> version of it: the work is done.</p>
+
+          
+            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 176;"><span class="line" id="L176"><span style="color: #24292EFF">  </span><span style="color: #1976D2">items</span><span style="color: #6F42C1">.unshift</span><span style="color: #24292EFF">(finalUrl </span><span style="color: #D32F2F">+</span><span style="color: #24292EFF"> </span><span style="color: #22863A">&#39; &#39;</span><span style="color: #24292EFF">)</span></span>
+<span class="line empty-line" id="L177"></span>
+<span class="line" id="L178"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">return</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">JSON</span><span style="color: #6F42C1">.stringify</span><span style="color: #24292EFF">(items)</span></span>
+<span class="line" id="L179"><span style="color: #24292EFF">}</span></span>
+<span class="line empty-line" id="L180"></span>
+<span class="line empty-line" id="L181"></span></code></pre>
+          
+                  
+          <p>The lines above use the <code>canonicalize()</code> function to convert a parameter into an array. The reason this happens, is to ensure that
+an object will be converted in such a way so that the result of <code>stringify()</code> will be the same regardless of the order the properties
+were defined in. The problem is that <code>JSON.stringify({a:10, b: 20})</code> returns something different to <code>JSON.stringify({b:20, a: 10})</code>.</p>
+<p>This function ensures that an object is converted into an array with properties sorted, which will ensure that <code>JSON.stringify()</code> will
+return the same value regardless of the order in which the properties were defined.</p>
+
+          
+            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 187;"><span class="line" id="L187"><span style="color: #D32F2F">function</span><span style="color: #24292EFF"> </span><span style="color: #6F42C1">canonicalize</span><span style="color: #24292EFF"> (obj) {</span></span>
+<span class="line" id="L188"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">if</span><span style="color: #24292EFF"> (</span><span style="color: #D32F2F">typeof</span><span style="color: #24292EFF"> obj </span><span style="color: #D32F2F">===</span><span style="color: #24292EFF"> </span><span style="color: #22863A">&#39;object&#39;</span><span style="color: #24292EFF">) {</span></span>
+<span class="line" id="L189"><span style="color: #24292EFF">    </span><span style="color: #D32F2F">if</span><span style="color: #24292EFF"> (obj </span><span style="color: #D32F2F">===</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">null</span><span style="color: #24292EFF">) </span><span style="color: #D32F2F">return</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">null</span></span>
+<span class="line" id="L190"><span style="color: #24292EFF">    </span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">a</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">Object</span><span style="color: #6F42C1">.entries</span><span style="color: #24292EFF">(obj)</span></span>
+<span class="line" id="L191"><span style="color: #24292EFF">    </span><span style="color: #D32F2F">return</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">a</span><span style="color: #6F42C1">.sort</span><span style="color: #24292EFF">((a</span><span style="color: #212121">,</span><span style="color: #24292EFF"> b) </span><span style="color: #D32F2F">=&gt;</span><span style="color: #24292EFF"> b[</span><span style="color: #1976D2">0</span><span style="color: #24292EFF">]</span><span style="color: #6F42C1">.localeCompare</span><span style="color: #24292EFF">(a[</span><span style="color: #1976D2">0</span><span style="color: #24292EFF">]))</span></span>
+<span class="line" id="L192"><span style="color: #24292EFF">  }</span></span>
+<span class="line" id="L193"><span style="color: #24292EFF">  </span><span style="color: #C2C3C5">/* Not an object: return as is */</span></span>
+<span class="line" id="L194"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">return</span><span style="color: #24292EFF"> obj</span></span>
+<span class="line" id="L195"><span style="color: #24292EFF">}</span></span>
+<span class="line empty-line" id="L196"></span>
+<span class="line empty-line" id="L197"></span></code></pre>
+          
+                  
+          <p>The implementation of <code>spaFetch()</code> can be broken down into several steps:</p>
+<ul>
+<li>Create the hash of the call. This is done with the function makeHash seen above</li>
+<li>Clean up the cache (stores in <code>spaFetch.cache</code>) of expired entries</li>
+<li>Check if the item is already in the cache. If it is, return a clone of the response in the cache and end the process right there</li>
+<li>Actually run <code>fetch()</code> with the passed parameters, and save the promise. If it’s to be cached, cache it</li>
+<li>Return a clone of the response</li>
+</ul>
+<p>Here is the code explained, step by step.</p>
+<p>First of all, the hash is created, as well as the <code>now</code> variable (which will be handy later)</p>
+
+          
+            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 208;"><span class="line" id="L208"><span style="color: #D32F2F">export</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #6F42C1">spaFetch</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">async</span><span style="color: #24292EFF"> (resource</span><span style="color: #212121">,</span><span style="color: #24292EFF"> init </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> {}) </span><span style="color: #D32F2F">=&gt;</span><span style="color: #24292EFF"> {</span></span>
+<span class="line" id="L209"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">hash</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #6F42C1">makeHash</span><span style="color: #24292EFF">(resource</span><span style="color: #212121">,</span><span style="color: #24292EFF"> init)</span></span>
+<span class="line" id="L210"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">now</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">Date</span><span style="color: #6F42C1">.now</span><span style="color: #24292EFF">()</span></span>
+<span class="line empty-line" id="L211"></span>
+<span class="line empty-line" id="L212"></span></code></pre>
+          
+                  
+          <p>This maintenance cycle is run every time <code>spaFetch()</code> is called. This could be done with a
+setTimeout(), but it’s easier to do it each time to prevent build-ups.</p>
+
+          
+            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 214;"><span class="line" id="L214"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">for</span><span style="color: #24292EFF"> (</span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> [</span><span style="color: #1976D2">hash</span><span style="color: #212121">,</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">value</span><span style="color: #24292EFF">] </span><span style="color: #D32F2F">of</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">spaFetch</span><span style="color: #24292EFF">.cache) {</span></span>
+<span class="line" id="L215"><span style="color: #24292EFF">    </span><span style="color: #D32F2F">if</span><span style="color: #24292EFF"> (</span><span style="color: #1976D2">value</span><span style="color: #24292EFF">.expires </span><span style="color: #D32F2F">&lt;</span><span style="color: #24292EFF"> now) {</span></span>
+<span class="line" id="L216"><span style="color: #24292EFF">      </span><span style="color: #1976D2">spaFetch</span><span style="color: #6F42C1">.</span><span style="color: #1976D2">cache</span><span style="color: #6F42C1">.delete</span><span style="color: #24292EFF">(hash)</span></span>
+<span class="line" id="L217"><span style="color: #24292EFF">    }</span></span>
+<span class="line" id="L218"><span style="color: #24292EFF">  }</span></span>
+<span class="line empty-line" id="L219"></span>
+<span class="line empty-line" id="L220"></span></code></pre>
+          
+                  
+          <p>If the entry is to be cached (meaning, <code>hash</code> is not empty), the code will look in the cache
+for it.
+<strong>If present</strong>, and it’s not expired, then a new promise is returned. This part is critical: if the
+response were to be returned straight away, then any call to <code>await response.json()</code> to actually get
+the data <em>would only work the first time it’s run</em>. This means that subsequent calls getting the
+response for the caches would be unable to use it for anything useful.
+This is why rather than returning the response, it returns a promise that will resolve with the
+<em>clone</em> of the response returned by the fetch promise.
+So:</p>
+<ul>
+<li>The cache always contains the <code>promise</code> returned by <code>fetch()</code>, stored as <code>fetchPromise</code></li>
+<li>When hitting the cache, what is actually returned is a promise that will call
+<code>fetchPromise.then()</code> and, once it gets the reponse, it will <code>clone</code> it and return it</li>
+<li>If there is an error, it will reject the promise with the same error.</li>
+</ul>
+<p>This means that the returned promise will work <em>exactly</em> as the one returned by <code>fetch()</code> for
+all intents and purposes, with the difference that the <code>response</code> returned is a clone of the
+one in the cache.
+Here is the code:</p>
+
+          
+            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 239;"><span class="line" id="L239"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">if</span><span style="color: #24292EFF"> (hash) {</span></span>
+<span class="line" id="L240"><span style="color: #24292EFF">    </span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">cachedItem</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">spaFetch</span><span style="color: #6F42C1">.</span><span style="color: #1976D2">cache</span><span style="color: #6F42C1">.get</span><span style="color: #24292EFF">(hash)</span></span>
+<span class="line empty-line" id="L241"></span>
+<span class="line" id="L242"><span style="color: #24292EFF">    </span><span style="color: #D32F2F">if</span><span style="color: #24292EFF"> (cachedItem </span><span style="color: #D32F2F">&amp;&amp;</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">cachedItem</span><span style="color: #24292EFF">.expires </span><span style="color: #D32F2F">&gt;=</span><span style="color: #24292EFF"> now) {</span></span>
+<span class="line" id="L243"><span style="color: #24292EFF">      </span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">responsePromise</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">new</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">Promise</span><span style="color: #24292EFF">((resolve</span><span style="color: #212121">,</span><span style="color: #24292EFF"> reject) </span><span style="color: #D32F2F">=&gt;</span><span style="color: #24292EFF"> {</span></span>
+<span class="line" id="L244"><span style="color: #24292EFF">        </span><span style="color: #1976D2">cachedItem</span><span style="color: #6F42C1">.</span><span style="color: #1976D2">fetchPromise</span><span style="color: #6F42C1">.then</span><span style="color: #24292EFF">(</span></span>
+<span class="line" id="L245"><span style="color: #24292EFF">          response </span><span style="color: #D32F2F">=&gt;</span><span style="color: #24292EFF"> {</span></span>
+<span class="line" id="L246"><span style="color: #24292EFF">            </span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">responseClone</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">response</span><span style="color: #6F42C1">.clone</span><span style="color: #24292EFF">()</span></span>
+<span class="line" id="L247"><span style="color: #24292EFF">            </span><span style="color: #6F42C1">resolve</span><span style="color: #24292EFF">(responseClone)</span></span>
+<span class="line" id="L248"><span style="color: #24292EFF">          }</span><span style="color: #212121">,</span></span>
+<span class="line" id="L249"><span style="color: #24292EFF">          error </span><span style="color: #D32F2F">=&gt;</span><span style="color: #24292EFF"> {</span></span>
+<span class="line" id="L250"><span style="color: #24292EFF">            </span><span style="color: #6F42C1">reject</span><span style="color: #24292EFF">(error)</span></span>
+<span class="line" id="L251"><span style="color: #24292EFF">          }</span></span>
+<span class="line" id="L252"><span style="color: #24292EFF">        )</span></span>
+<span class="line" id="L253"><span style="color: #24292EFF">      })</span></span>
+<span class="line" id="L254"><span style="color: #24292EFF">      </span><span style="color: #D32F2F">return</span><span style="color: #24292EFF"> responsePromise</span></span>
+<span class="line" id="L255"><span style="color: #24292EFF">    }</span></span>
+<span class="line" id="L256"><span style="color: #24292EFF">  }</span></span>
+<span class="line empty-line" id="L257"></span>
+<span class="line empty-line" id="L258"></span></code></pre>
+          
+                  
+          <p>If the call gets to this stage, it means that it <em>wasn’t</em> in the cache. This means that it will need
+to be called.</p>
+<p>Note that developers are able to change the module’s configuration to use a different fetching function (which
+will be expected to return a fetch() promise)</p>
+
+          
+            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 263;"><span class="line" id="L263"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">let</span><span style="color: #24292EFF"> fetchPromise</span></span>
+<span class="line" id="L264"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">if</span><span style="color: #24292EFF"> (</span><span style="color: #1976D2">config</span><span style="color: #24292EFF">.fetcher) {</span></span>
+<span class="line" id="L265"><span style="color: #24292EFF">    fetchPromise </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">config</span><span style="color: #6F42C1">.fetcher</span><span style="color: #24292EFF">(resource</span><span style="color: #212121">,</span><span style="color: #24292EFF"> init)</span></span>
+<span class="line" id="L266"><span style="color: #24292EFF">  } </span><span style="color: #D32F2F">else</span><span style="color: #24292EFF"> {</span></span>
+<span class="line" id="L267"><span style="color: #24292EFF">    fetchPromise </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #6F42C1">fetch</span><span style="color: #24292EFF">(resource</span><span style="color: #212121">,</span><span style="color: #24292EFF"> init)</span></span>
+<span class="line" id="L268"><span style="color: #24292EFF">  }</span></span>
+<span class="line empty-line" id="L269"></span>
+<span class="line empty-line" id="L270"></span></code></pre>
+          
+                  
+          <p>If the item is to be cached (see: <code>hash</code> is not empty), it will do so:</p>
+
+          
+            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 271;"><span class="line" id="L271"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">if</span><span style="color: #24292EFF"> (hash) {</span></span>
+<span class="line" id="L272"><span style="color: #24292EFF">    </span><span style="color: #1976D2">spaFetch</span><span style="color: #6F42C1">.</span><span style="color: #1976D2">cache</span><span style="color: #6F42C1">.set</span><span style="color: #24292EFF">(hash</span><span style="color: #212121">,</span><span style="color: #24292EFF"> { fetchPromise</span><span style="color: #212121">,</span><span style="color: #24292EFF"> expires</span><span style="color: #D32F2F">:</span><span style="color: #24292EFF"> now </span><span style="color: #D32F2F">+</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">config</span><span style="color: #24292EFF">.cacheDuration })</span></span>
+<span class="line" id="L273"><span style="color: #24292EFF">  }</span></span>
+<span class="line empty-line" id="L274"></span>
+<span class="line empty-line" id="L275"></span></code></pre>
+          
+                  
+          <p>Even if the cache was empty, it’s still <em>paramount</em> to return a proxy promise (as explained above) rather than
+the original <code>fetch()</code> promise, in order to prevent the case where <code>await response.json()</code> is called – and the cached
+value is rendered useless.</p>
+
+          
+            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 278;"><span class="line" id="L278"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">return</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">new</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">Promise</span><span style="color: #24292EFF">((resolve</span><span style="color: #212121">,</span><span style="color: #24292EFF"> reject) </span><span style="color: #D32F2F">=&gt;</span><span style="color: #24292EFF"> {</span></span>
+<span class="line" id="L279"><span style="color: #24292EFF">    </span><span style="color: #1976D2">fetchPromise</span><span style="color: #6F42C1">.then</span><span style="color: #24292EFF">(</span></span>
+<span class="line" id="L280"><span style="color: #24292EFF">      response </span><span style="color: #D32F2F">=&gt;</span><span style="color: #24292EFF"> {</span></span>
+<span class="line" id="L281"><span style="color: #24292EFF">        </span><span style="color: #D32F2F">const</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">responseClone</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">response</span><span style="color: #6F42C1">.clone</span><span style="color: #24292EFF">()</span></span>
+<span class="line" id="L282"><span style="color: #24292EFF">        </span><span style="color: #6F42C1">resolve</span><span style="color: #24292EFF">(responseClone)</span></span>
+<span class="line" id="L283"><span style="color: #24292EFF">      }</span><span style="color: #212121">,</span></span>
+<span class="line" id="L284"><span style="color: #24292EFF">      error </span><span style="color: #D32F2F">=&gt;</span><span style="color: #24292EFF"> {</span></span>
+<span class="line" id="L285"><span style="color: #24292EFF">        </span><span style="color: #6F42C1">reject</span><span style="color: #24292EFF">(error)</span></span>
+<span class="line" id="L286"><span style="color: #24292EFF">      }</span></span>
+<span class="line" id="L287"><span style="color: #24292EFF">    )</span></span>
+<span class="line" id="L288"><span style="color: #24292EFF">  })</span></span>
+<span class="line" id="L289"><span style="color: #24292EFF">}</span></span>
+<span class="line empty-line" id="L290"></span>
+<span class="line empty-line" id="L291"></span></code></pre>
+          
+                  
+          <p>The cache is a property of the <code>spaFetch()</code> function. This helps with testing</p>
+
+          
+            <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 292;"><span class="line" id="L292"><span style="color: #1976D2">spaFetch</span><span style="color: #24292EFF">.cache </span><span style="color: #D32F2F">=</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">new</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">Map</span><span style="color: #24292EFF">()</span></span>
+<span class="line empty-line" id="L293"></span>
+<span class="line empty-line" id="L294"></span></code></pre>
+          
+                  
+          <h1 id="conclusions">Conclusions</h1>
+
+          
+                  
+          <p>Writing this module had two distinct challenges. The first one, was the creation of a hash function that
+<em>really</em> worked regardless of the way <code>fetch()</code> was used. The second one, was to return a promise
+that worked <em>exactly</em> like <code>fetch()</code>, although only one actual call was made.</p>
+<p>The end result is something that can facilitate the creation of decoupled components which might end up making
+the exact same network request at the same time.</p>
+
+          
+        
+      
+      </article>
+      
+
+        
+    </section>
+  </main>
+  <footer></footer>
+  
+    <ee-drawer id="drawer" class="side-menu">
+     <ul>
+        
+          
+          
+            <li>
+                <a class="source " href="index.html">
+                    home
+                </a>
+            </li>
+          
+        
+          
+          
+            <li>
+                <a class="source " href="documentation.html">
+                    documentation
+                </a>
+            </li>
+          
+        
+          
+          
+            <li>
+                <a class="source " href="codelabs.html">
+                    codelabs
+                </a>
+            </li>
+          
+        
+          
+          
+        
+          
+          
+            <li>
+                <a class="source  current " href="literate-code.html">
+                    literate code
+                </a>
+            </li>
+          
+        
+      </ul>
+    </ee-drawer>
+  
+</body>
+<script>
+  const drawer = document.getElementById('drawer')
+  this.addEventListener('menu-clicked', () => {
+    drawer.toggle()
+  })
+
+  const header = document.getElementById('header')
+  header.menu = (Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0) < 800)
+  this.addEventListener('click', () => {
+    const toc = document.querySelector('.toc')
+    if (toc) {
+      sessionStorage.setItem(`${location.pathname.split('/')[1]}_toc`, String(toc.scrollTop))
+    }
+  })
+  this.addEventListener('load', () => {
+    const toc = document.querySelector('.toc')
+    if (toc) {
+      const tocScrollPosition = sessionStorage.getItem(`${location.pathname.split('/')[1]}_toc`)
+      if (tocScrollPosition) toc.scrollTop = Number(tocScrollPosition)
+    }
+  })
+</script>
+
+
+
+
+</html>

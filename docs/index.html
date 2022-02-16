@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+<head>
+  <title>Welcome</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <link rel="stylesheet" media="all" href="template.css" />
+  <link rel="stylesheet" media="all" href="normalize.css" />
+  <link rel="stylesheet" media="all" href="extra.css" />
+
+  <script type="module" src="/lib/material-esm.js"></script>
+  <script type="module" src="/lib/tpe-esm.js"></script>
+
+  
+
+
+</head>
+<body>
+  <ee-header id="header" class="header" >
+    <div slot="header-title" style="display: flex;">
+      <div id="logo" alt="TPE"></div>
+      <h3 class="page-title" >Welcome</h3>
+    </div>
+    
+      <nav class="header-menu" slot="actions" role="navigation">
+        <ul>
+          
+            
+            
+              <li>
+                  <a class="source  current " href="index.html">
+                      home
+                  </a>
+              </li>
+            
+          
+            
+            
+              <li>
+                  <a class="source " href="documentation.html">
+                      documentation
+                  </a>
+              </li>
+            
+          
+            
+            
+              <li>
+                  <a class="source " href="codelabs.html">
+                      codelabs
+                  </a>
+              </li>
+            
+          
+            
+            
+          
+            
+            
+              <li>
+                  <a class="source " href="literate-code.html">
+                      literate code
+                  </a>
+              </li>
+            
+          
+        </ul>
+      </nav>
+    
+    <div class="links" slot="actions">
+      <a href="https://github.com/mobily-enterprises/tpe" target="_blank" title="View on GitHub">
+        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <title>GitHub icon</title>
+          <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+        </svg>
+      </a>
+    </div>
+  </ee-header>
+  <main role="main">
+    
+    
+
+      <nav class="toc" role="navigation">
+        <ul>
+          
+            
+            
+              <li>
+                <a class="source  current " href="index.html">
+                    home
+                </a>
+              </li>
+          
+            
+            
+              <li>
+                <a class="source " href="documentation.html">
+                    documentation
+                </a>
+              </li>
+          
+            
+            
+              <li>
+                <a class="source " href="codelabs.html">
+                    codelabs
+                </a>
+              </li>
+          
+            
+            
+              <li>
+                <a class="source  indented " href="codelabs/how-to/index.html">
+                    codelabs &#8627; how to
+                </a>
+              </li>
+          
+            
+            
+              <li>
+                <a class="source " href="literate-code.html">
+                    literate code
+                </a>
+              </li>
+          
+        </ul>
+      </nav>
+    
+
+    <section class="content-page">
+
+      
+<style>
+
+  NOPE ee-header {
+    -webkit-animation: fadeIn 0.6s ease-in; /* Safari 4+ */
+    -moz-animation:    fadeIn 0.6s ease-in; /* Fx 5+ */
+    -o-animation:      fadeIn 0.6s ease-in; /* Opera 12+ */
+    animation:         fadeIn 0.6s ease-in; /* IE 10+, Fx 29+ */
+  }
+
+  NOPE #logo {
+    box-sizing: border-box;
+    height: 100px;
+    background-image: url("images/TPE_logo_white.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+
+  /*
+  .header div.topbar #logo ,
+  ee-header #logo {
+    display: none;
+  }
+  */
+
+  .home-hero {
+    box-sizing: border-box;
+    padding-top: 2em;
+    padding-bottom: 1em;
+    color: whitesmoke;
+    background-color: #343434;
+    background-image: url("data:image/svg+xml,%3Csvg width='84' height='48' viewBox='0 0 84 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h12v6H0V0zm28 8h12v6H28V8zm14-8h12v6H42V0zm14 0h12v6H56V0zm0 8h12v6H56V8zM42 8h12v6H42V8zm0 16h12v6H42v-6zm14-8h12v6H56v-6zm14 0h12v6H70v-6zm0-16h12v6H70V0zM28 32h12v6H28v-6zM14 16h12v6H14v-6zM0 24h12v6H0v-6zm0 8h12v6H0v-6zm14 0h12v6H14v-6zm14 8h12v6H28v-6zm-14 0h12v6H14v-6zm28 0h12v6H42v-6zm14-8h12v6H56v-6zm0-8h12v6H56v-6zm14 8h12v6H70v-6zm0 8h12v6H70v-6zM14 24h12v6H14v-6zm14-8h12v6H28v-6zM14 8h12v6H14V8zM0 8h12v6H0V8z' fill='%239C92AC' fill-opacity='0.09' fill-rule='evenodd'/%3E%3C/svg%3E");
+  }
+
+  iframe.demo {
+    width: 100vw;
+    margin: auto;
+  }
+
+  @media (min-width: 800px) {
+    #logo {
+      height: 160px;
+    }
+
+    iframe.demo {
+      width: 80vw;
+    }
+  }
+
+  blockquote code {
+    background-color: #dcdcdc;
+  }
+
+</style>
+
+<div class="home-hero">
+  <div id="logo" alt="TPE"></div>
+  <h4>Powerful, themeable, enhanced native elements<h4>
+</div>
+
+<blockquote>
+  The Platform Elements (TPE) is not yet another custom implementation. It <em>is</em> native elements, enhanced. TPE form controls are 100% customizable, and still behave like you would expect from native elements, while also providing additional capabilities. 
+</blockquote>
+
+<div class="home-section home-compare">
+  <div>
+    <h4>From this...</h4>
+    <pre><code><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;native-input&quot;</span>&gt;</span></span><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span></span>Native Input (lowercase only)<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;native-input&quot;</span> <span class="hljs-attr">pattern</span>=<span class="hljs-string">&quot;[a-z]*&quot;</span> /&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;native-checkbox&quot;</span> /&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;native-checkbox&quot;</span>&gt;</span></span><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span></span>Native Checkbox<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span></span>
+</code></pre>
+    <label for="native-input">
+      <span>Native Input (lowercase only)</span>
+    </label>
+    <input id="native-input" pattern="[a-z]*" />
+
+    <input type="checkbox" id="native-checkbox" />
+    <label for="native-checkbox">
+      <span>Native Checkbox</span>
+    </label>
+  </div>
+  <div>
+    <h4>...to this!</h4>
+    <pre><code><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">nn-input-text</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;TPE Input (lowercase only)&quot;</span> <span class="hljs-attr">pattern</span>=<span class="hljs-string">&quot;[a-z]*&quot;</span>&gt;</span></span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">nn-input-text</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">nn-input-checkbox</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;TPE Checkbox&quot;</span>&gt;</span></span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">nn-input-checkbox</span>&gt;</span></span>
+</code></pre>
+    <nn-input-text label="TPE Input (lowercase only)" pattern="[a-z]+"></nn-input-text>
+    <nn-input-checkbox label="TPE Checkbox"></nn-input-checkbox>
+  </div>
+</div>
+
+<blockquote>
+  In this example, the <code>pattern</code> attribute isn’t handled by TPE. Every attribute and <em>every</em> property is mirrored into the contained native element. TPE elements don’t need a manual, since they <em>are</em> native ones.
+</blockquote>
+
+<div class="home-section">
+  <h2>The element collection </h2>
+  <p>Native elements are wrapped inside <a
+  href="https://developer.mozilla.org/en-US/docs/Web/Web_Components">Custom
+  Elements</a> that reflect presence and values for all native properties and
+  attributes. The only differences, for the form control elements, are the
+  embedded labels and the fact that input types all have their own element, like
+  <code>nn-input-email</code> and <code>nn-input-progress</code>.</p>
+  <p>These elements are what we call <strong>Nearly Native</strong> (hence the <em>nn-</em>
+  prefix). We have also come up with two additional categories of elements that
+  can help developers and design build great apps. They are <strong>Enhaced
+  Native</strong> (en-) and <strong>Extra Elements</strong> (ee-).</p>
+  <p>You can <a href="/documentation.html">learn more</a> in the documentation section, but here is a brief summary of how they compare:</p>
+</div>
+<div class="home-section home-compare">
+  <div>
+    <h3>NN ELEMENTS</h3>
+    <blockquote> Look and behave like native elements by default.</blockquote>
+  </div>
+  <div>
+    <h3>EN ELEMENTS</h3>
+    <blockquote> Useful features and capabilities added to native elements.</blockquote>
+  </div>
+  <div>
+    <h3>EE ELEMENTS</h3>
+    <blockquote> Common UI patterns that have no native counterparts.</blockquote>
+  </div>
+</div>
+
+<div class="home-section">
+  <h2>Fully customizable</h2>
+  <p>All elements in the collection can be used directly or extended by
+  Developers to include more functionality needed in your project. TPE has a
+  robust theming solution that makes it possible to implement an entire design
+  system as an easy to build add-on package. It also allows for the use of
+  simple, plain CSS, while still taking advantage of shadow DOM
+  encapsulation. 
+  </p>
+</div>
+
+<div class="home-section home-showcase">
+  <h2>Try it out live</h2>
+  <div style="display: flex;">
+    <iframe class="demo" src="https://stackblitz.com/edit/live-tpe?embed=1&file=index.html" height="400px"></iframe>
+  </div>
+</div>
+
+      
+        <article class="index.md">
+      
+                  
+          
+          
+        
+      
+      </article>
+      
+
+        
+    </section>
+  </main>
+  <footer></footer>
+  
+    <ee-drawer id="drawer" class="side-menu">
+     <ul>
+        
+          
+          
+            <li>
+                <a class="source  current " href="index.html">
+                    home
+                </a>
+            </li>
+          
+        
+          
+          
+            <li>
+                <a class="source " href="documentation.html">
+                    documentation
+                </a>
+            </li>
+          
+        
+          
+          
+            <li>
+                <a class="source " href="codelabs.html">
+                    codelabs
+                </a>
+            </li>
+          
+        
+          
+          
+        
+          
+          
+            <li>
+                <a class="source " href="literate-code.html">
+                    literate code
+                </a>
+            </li>
+          
+        
+      </ul>
+    </ee-drawer>
+  
+</body>
+<script>
+  const drawer = document.getElementById('drawer')
+  this.addEventListener('menu-clicked', () => {
+    drawer.toggle()
+  })
+
+  const header = document.getElementById('header')
+  header.menu = (Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0) < 800)
+  this.addEventListener('click', () => {
+    const toc = document.querySelector('.toc')
+    if (toc) {
+      sessionStorage.setItem(`${location.pathname.split('/')[1]}_toc`, String(toc.scrollTop))
+    }
+  })
+  this.addEventListener('load', () => {
+    const toc = document.querySelector('.toc')
+    if (toc) {
+      const tocScrollPosition = sessionStorage.getItem(`${location.pathname.split('/')[1]}_toc`)
+      if (tocScrollPosition) toc.scrollTop = Number(tocScrollPosition)
+    }
+  })
+</script>
+
+
+
+
+</html>
