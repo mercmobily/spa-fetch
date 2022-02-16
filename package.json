@@ -4,7 +4,7 @@
   "description": "Global fetch for Single Page Applications",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cypress run"
   },
   "author": "Tony Mobily",
   "license": "gpl-3.0",
