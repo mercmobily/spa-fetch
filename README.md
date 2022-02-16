@@ -1,3 +1,5 @@
+[![npm version][npm-image]][npm-url]
+[![install size][install-size-image]][install-size-url]
 # spa-fetch documentation
 
 Visit the [full web site](https://mobily-enterprises.github.io/spa-fetch) with the full source code as literate code.

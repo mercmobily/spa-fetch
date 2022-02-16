@@ -13,4 +13,10 @@ cp ../spa-fetch.js literate-code.js
   # codelabs/how-to/index.md\
 
 cp -r ./images ../docs/
-cat documentation.md > ../README.md
+
+cat > ../README.md  <<EOF 
+[![npm version][npm-image]][npm-url]
+[![install size][install-size-image]][install-size-url]
+EOF
+
+cat documentation.md >> ../README.md
