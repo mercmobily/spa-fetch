@@ -1,10 +1,11 @@
 {
   "name": "spa-fetch",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Global fetch for Single Page Applications",
   "main": "spa-fetch.js",
   "scripts": {
-    "test": "cypress run"
+    "docs": "cd docs-src;./makeDocs.sh",
+    "test": "start-server-and-test 'node test/testServer.js' http://localhost:8080/stores/1.0.0/users 'cypress run'"
   },
   "author": "Tony Mobily",
   "license": "gpl-3.0",
@@ -15,10 +16,6 @@
   },
   "devDependencies": {
     "cypress": "^9.4.1",
-    "express": "^4.17.2",
-    "jsonreststores": "^2.0.14",
-    "simpleschema": "^2.0.6",
-    "start-server-and-test": "^1.14.0",
     "eslint": "^8.3.0",
     "eslint-config-standard": "^14.1.1",
     "eslint-plugin-html": "^6.2.0",
@@ -26,10 +23,15 @@
     "eslint-plugin-lit": "^1.6.1",
     "eslint-plugin-node": "^10.0.0",
     "eslint-plugin-promise": "^4.3.1",
-    "eslint-plugin-standard": "^4.1.0"
-  },
-  "dependencies": {
+    "eslint-plugin-standard": "^4.1.0",
+    "express": "^4.17.2",
+    "jsonreststores": "^2.0.14",
+    "simpleschema": "^2.0.6",
+    "start-server-and-test": "^1.14.0",
+    "web-sites-common": "^1.0.0",
     "docco": "^0.9.1",
     "docco-next": "^0.9.10"
+  },
+  "dependencies": {
   }
 }
