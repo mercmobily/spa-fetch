@@ -1,5 +1,5 @@
 {
-  "extends": ["eslint:recommended", "standard", "plugin:lit/recommended"],
+  "extends": ["eslint:recommended", "standard", "plugin:lit/recommended","plugin:literate-comments/recommended"],
   "parserOptions": {
     "ecmaVersion": 2020
   },
@@ -9,7 +9,8 @@
   },
   "plugins": [
     "html",
-    "lit"
+    "lit",
+    "literate-comments"
   ],
   "rules": {
     "lit/no-legacy-template-syntax": "off",
