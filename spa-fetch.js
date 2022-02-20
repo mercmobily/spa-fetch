@@ -131,7 +131,7 @@ function makeHash (resource, init) {
 //
 // The first case is the easy one: the code is identical to the previous case, with the exception that the `Request` object
 // doesn't need to be created (since it was passed).
-// 
+//
 // The second case, where `init` was passed, is much more involved. The passed `Request` does _not_ have all of the properties
 // needed, since there is a second `init` parameter that will affect those properties.
 // The solution is to first create an `originalRequestInit` based on the original, passed `Request` object; then, another request
@@ -139,7 +139,7 @@ function makeHash (resource, init) {
 // original `originalRequestInit` object mixed with the passed `init` object
 // (That is, `new Request(originalRequest.url, { ...originalRequestInit, ...init })`). Finally, the `finalInit` variable is created
 // based on the important properties of _that_ newly created request.
-// 
+//
 // The browser is likely to do something very similar when is passed a `Request` object _and_ and `init` object to the `fetch()` function.
 //
 // At this stage, the two crucial variables `finalInit` and `finalUrl` are set.
