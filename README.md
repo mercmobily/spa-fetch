@@ -2,6 +2,7 @@
 [![install size][install-size-image]][install-size-url]
 # spa-fetch documentation
 
+
 Visit the [full web site](https://mobily-enterprises.github.io/spa-fetch) with the full source code as literate code.
 
 ## Use as drop-in replacement of the native `fetch()`
